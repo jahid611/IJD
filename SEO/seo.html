@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IJM Web - Création de Site Web</title>
+    <title>IJM Web - Services SEO</title>
     <style>
         /* Reset CSS */
         * {
@@ -65,7 +65,7 @@
 
         /* Hero section */
         .hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1600x900/?website');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1600x900/?seo');
             background-size: cover;
             background-position: center;
             height: 60vh;
@@ -85,6 +85,7 @@
             font-size: 1.2rem;
             max-width: 600px;
             margin: 0 auto;
+        
         }
 
         /* Services section */
@@ -148,6 +149,7 @@
         .step {
             text-align: center;
             max-width: 200px;
+            margin: 20px;
         }
 
         .step-number {
@@ -161,6 +163,63 @@
             justify-content: center;
             margin: 0 auto 20px;
             font-weight: bold;
+        }
+
+        /* Benefits section */
+        .benefits {
+            padding: 60px 0;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            color: var(--secondary-color);
+            margin-bottom: 40px;
+        }
+
+        .benefit-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .benefit-item {
+            background-color: var(--card-background);
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .benefit-item i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-right: 20px;
+        }
+
+        /* CTA section */
+        .cta {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .cta h2 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #ff3333;
         }
 
         /* Footer */
@@ -180,7 +239,8 @@
                 <li><a href="/Acceuil/index.html#services">Accueil</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#process">Processus</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#benefits">Avantages</a></li>
+                <li><a href="/Acceuil/index.html#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -188,34 +248,34 @@
     <main>
         <section id="home" class="hero">
             <div class="container">
-                <h1>Création de Site Web Professionnel</h1>
-                <p>Donnez vie à votre présence en ligne avec des sites web sur mesure, performants et esthétiques.</p>
+                <h1>Services SEO Professionnels</h1>
+                <p>Améliorez votre visibilité en ligne et attirez plus de clients qualifiés grâce à notre expertise en référencement naturel.</p>
             </div>
         </section>
 
         <section id="services" class="services">
             <div class="container">
-                <h2>Nos Services de Création Web</h2>
+                <h2>Nos Services SEO</h2>
                 <div class="service-grid">
                     <div class="service-card">
-                        <i class="fas fa-laptop-code"></i>
-                        <h3>Site Vitrine</h3>
-                        <p>Présentez votre entreprise avec élégance et professionnalisme.</p>
+                        <i class="fas fa-search"></i>
+                        <h3>Audit SEO</h3>
+                        <p>Analyse approfondie de votre site web pour identifier les opportunités d'amélioration.</p>
                     </div>
                     <div class="service-card">
-                        <i class="fas fa-mobile-alt"></i>
-                        <h3>Site Responsive</h3>
-                        <p>Des sites adaptés à tous les appareils pour une expérience optimale.</p>
+                        <i class="fas fa-pencil-alt"></i>
+                        <h3>Optimisation On-Page</h3>
+                        <p>Optimisation du contenu et de la structure de votre site pour les moteurs de recherche.</p>
                     </div>
                     <div class="service-card">
-                        <i class="fas fa-shopping-cart"></i>
-                        <h3>E-commerce</h3>
-                        <p>Lancez votre boutique en ligne et boostez vos ventes.</p>
+                        <i class="fas fa-link"></i>
+                        <h3>Link Building</h3>
+                        <p>Création de liens de qualité pour renforcer l'autorité de votre site.</p>
                     </div>
                     <div class="service-card">
-                        <i class="fas fa-cogs"></i>
-                        <h3>Maintenance</h3>
-                        <p>Gardez votre site à jour et performant avec notre service de maintenance.</p>
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Suivi et Rapports</h3>
+                        <p>Surveillance continue de vos performances et rapports détaillés.</p>
                     </div>
                 </div>
             </div>
@@ -223,29 +283,60 @@
 
         <section id="process" class="process">
             <div class="container">
-                <h2>Notre Processus de Création</h2>
+                <h2>Notre Processus SEO</h2>
                 <div class="process-steps">
                     <div class="step">
                         <div class="step-number">1</div>
-                        <h3>Consultation</h3>
-                        <p>Nous discutons de vos besoins et objectifs pour votre site web.</p>
+                        <h3>Audit Initial</h3>
+                        <p>Analyse complète de votre site et de votre présence en ligne.</p>
                     </div>
                     <div class="step">
                         <div class="step-number">2</div>
-                        <h3>Conception</h3>
-                        <p>Nous créons des maquettes et des wireframes pour visualiser votre futur site.</p>
+                        <h3>Stratégie</h3>
+                        <p>Élaboration d'une stratégie SEO personnalisée.</p>
                     </div>
                     <div class="step">
                         <div class="step-number">3</div>
-                        <h3>Développement</h3>
-                        <p>Nous codons votre site avec les dernières technologies web.</p>
+                        <h3>Optimisation</h3>
+                        <p>Mise en œuvre des optimisations on-page et off-page.</p>
                     </div>
                     <div class="step">
                         <div class="step-number">4</div>
-                        <h3>Tests et Lancement</h3>
-                        <p>Nous testons rigoureusement votre site avant de le mettre en ligne.</p>
+                        <h3>Suivi</h3>
+                        <p>Surveillance continue et ajustements de la stratégie.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="benefits" class="benefits">
+            <div class="container">
+                <h2>Avantages du SEO</h2>
+                <ul class="benefit-list">
+                    <li class="benefit-item">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Augmentation du trafic organique qualifié</span>
+                    </li>
+                    <li class="benefit-item">
+                        <i class="fas fa-bullseye"></i>
+                        <span>Meilleur ciblage des clients potentiels</span>
+                    </li>
+                    <li class="benefit-item">
+                        <i class="fas fa-trophy"></i>
+                        <span>Amélioration de la crédibilité et de l'autorité en ligne</span>
+                    </li>
+                    <li class="benefit-item">
+                        <i class="fas fa-coins"></i>
+                        <span>Retour sur investissement à long terme</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>Prêt à booster votre visibilité en ligne ?</h2>
+                <a href="/Acceuil/index.html#contact" class="cta-button">Demandez un audit SEO gratuit</a>
             </div>
         </section>
     </main>

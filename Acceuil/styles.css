@@ -303,9 +303,9 @@ body, html {
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #f05858; /* Rouge IJM */
+    background-color: #ff0000; /* Rouge IJM */
     color: white;
-    border-radius: 5px;
+    border-radius: 25px;
     text-transform: uppercase;
     font-weight: bold;
     text-align: center;
@@ -314,7 +314,7 @@ body, html {
     cursor: pointer;
 }
 .btn:hover {
-    background-color: #e63946; /* Rouge plus foncé au hover */
+    background-color: #000000; /* Rouge plus foncé au hover */
 }
 
 .scroll-indicator {

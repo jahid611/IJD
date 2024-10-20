@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IJM Web - Solutions E-commerce</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Variables CSS */
+        :root {
+            --primary-color: #ff4d4d;
+            --secondary-color: #f2f2f2;
+            --background-color: #1a1a1a;
+            --text-color: #bfbfbf;
+            --card-background: #262626;
+        }
+
+        /* Styles généraux */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-background);
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero section */
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1600x900/?ecommerce');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--secondary-color);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Features section */
+        .features {
+            padding: 60px 0;
+        }
+
+        .features h2 {
+            text-align: center;
+            color: var(--secondary-color);
+            margin-bottom: 40px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--card-background);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        /* Platforms section */
+        .platforms {
+            background-color: var(--card-background);
+            padding: 60px 0;
+        }
+
+        .platforms h2 {
+            text-align: center;
+            color: var(--secondary-color);
+            margin-bottom: 40px;
+        }
+
+        .platform-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .platform {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .platform img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+        }
+
+        /* CTA section */
+        .cta {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .cta h2 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #ff3333;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--card-background);
+            color: var(--secondary-color);
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/Acceuil/index.html#services">Accueil</a></li>
+                <li><a href="#features">Fonctionnalités</a></li>
+                <li><a href="#platforms">Plateformes</a></li>
+                <li><a href="/Acceuil/index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Solutions E-commerce Sur Mesure</h1>
+                <p>Transformez votre entreprise avec une boutique en ligne performante et attrayante.</p>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2>Fonctionnalités E-commerce Avancées</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h3>Panier d'achat intuitif</h3>
+                        <p>Facilitez les achats de vos clients avec un panier d'achat convivial et facile à utiliser.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-credit-card"></i>
+                        <h3>Paiements sécurisés</h3>
+                        <p>Offrez une variété d'options de paiement sécurisées pour rassurer vos clients.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-box"></i>
+                        <h3>Gestion des stocks</h3>
+                        <p>Gérez efficacement votre inventaire avec notre système de gestion des stocks en temps réel.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Design responsive</h3>
+                        <p>Votre boutique s'adapte parfaitement à tous les appareils pour une expérience d'achat optimale.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="platforms" class="platforms">
+            <div class="container">
+                <h2>Plateformes E-commerce</h2>
+                <div class="platform-list">
+                    <div class="platform">
+                        <img src="https://cdn.worldvectorlogo.com/logos/woocommerce.svg" alt="WooCommerce">
+                        <h3>WooCommerce</h3>
+                    </div>
+                    <div class="platform">
+                        <img src="https://cdn.worldvectorlogo.com/logos/shopify.svg" alt="Shopify">
+                        <h3>Shopify</h3>
+                    </div>
+                    <div class="platform">
+                        <img src="https://cdn.worldvectorlogo.com/logos/magento.svg" alt="Magento">
+                        <h3>Magento</h3>
+                    </div>
+                    <div class="platform">
+                        <img src="https://cdn.worldvectorlogo.com/logos/prestashop.svg" alt="PrestaShop">
+                        <h3>PrestaShop</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>Prêt à lancer votre boutique en ligne ?</h2>
+                <a href="#contact" class="cta-button">Contactez-nous</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 IJM Web. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <script>
+        // Animation des cartes de fonctionnalités au défilement
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function animateFeatureCards() {
+            var cards = document.querySelectorAll('.feature-card');
+            cards.forEach(function(card) {
+                if (isElementInViewport(card)) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Initialiser les cartes avec une opacité de 0 et une translation vers le bas
+        document.addEventListener('DOMContentLoaded', function() {
+            var cards = document.querySelectorAll('.feature-card');
+            cards.forEach(function(card) {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            animateFeatureCards();
+        });
+
+        // Animer les cartes au défilement
+        window.addEventListener('scroll', animateFeatureCards);
+
+        // Navigation fluide
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

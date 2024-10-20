@@ -37,15 +37,6 @@ function scrollHeader(){
 }
 window.addEventListener('scroll', scrollHeader)
 
-
-
-
-
-
-
-
-
-
 /*==================== PRICING MODAL BEHAVIOR ====================*/
 const closeBtn = document.querySelector('.close-btn');
 const modalButton = document.querySelector('.pricing-modal-button');
@@ -66,11 +57,6 @@ window.addEventListener('click', (event) => {
         modal.style.display = 'none';
     }
 });
-
-
-
-
-
 
 document.addEventListener('DOMContentLoaded', function () {
     // Variables pour le plan et le prix sélectionné
@@ -124,94 +110,124 @@ document.addEventListener('DOMContentLoaded', function () {
     function generateStyledPDF(formData, selectedPlan, basePrice) {
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
-
-        // En-tête du devis
-        doc.setFillColor(207, 18, 18);
-        doc.rect(0, 0, 210, 40, 'F');
-        doc.setFontSize(36);
-        doc.setTextColor(255, 255, 255);
-        doc.setFont('helvetica', 'bold');
-        doc.text('Devis n° 0123', 20, 30);
-
-        // Informations du client
-        doc.setTextColor(0, 0, 0);
-        doc.setFontSize(14);
-        doc.setFont('helvetica', 'bold');
-        doc.text('Client:', 20, 50);
-        doc.setFontSize(12);
-        doc.setFont('helvetica', 'normal');
-        doc.text(`${formData.name}`, 20, 60);
-        doc.text(`${formData.email}`, 20, 66);
-        doc.text(`${formData.project}`, 20, 72);
-
-        // Informations de l'entreprise
-        doc.setFont('helvetica', 'bold');
-        doc.text('IJM Développement Web', 140, 50);
-        doc.setFont('helvetica', 'normal');
-        doc.setFontSize(12);
-        doc.text('123 Anywhere St, Any City', 140, 60);
-        doc.text('+123-456-7890', 140, 66);
-        doc.text('contact@ijmweb.com', 140, 72);
-
-        // Tableau des services
-        doc.setFont('helvetica', 'bold');
-        doc.setFontSize(14);
-        doc.text('Description', 20, 90);
-        doc.text('Prix unitaire', 100, 90);
-        doc.text('Quantité', 140, 90);
-        doc.text('Total HT', 170, 90);
-
-        // Contenu du tableau
-        doc.setFont('helvetica', 'normal');
-        let startY = 100;
-        doc.text(selectedPlan.charAt(0).toUpperCase() + selectedPlan.slice(1), 20, startY);
-        doc.text(`${basePrice} €`, 100, startY);
-        doc.text('1', 140, startY);
-        doc.text(`${basePrice} €`, 170, startY);
-
-        // Sous-total et TVA
-        startY += 20;
-        doc.setFont('helvetica', 'bold');
-        doc.text('Subtotal :', 140, startY);
-        doc.text(`${basePrice} €`, 170, startY);
-        startY += 10;
-        const tva = basePrice * 0.2;
-        doc.text('TVA (20%) :', 140, startY);
-        doc.text(`${tva.toFixed(2)} €`, 170, startY);
-
-        // Total
-        startY += 20;
-        doc.setFontSize(16);
-        doc.setTextColor(207, 18, 18);
-        doc.text('TOTAL :', 140, startY);
-        doc.text(`${(basePrice + tva).toFixed(2)} €`, 170, startY);
-
-        // Informations de paiement et footer
-        startY += 30;
-        doc.setTextColor(0, 0, 0);
-        doc.setFontSize(12);
-        doc.setFont('helvetica', 'bold');
-        doc.text('Informations de paiement', 20, startY);
-        startY += 10;
-        doc.setFont('helvetica', 'normal');
-        doc.text('Paiement par virement bancaire', 20, startY);
-        doc.text('Compte : 0123 4567 8901', 20, startY + 6);
-
-        startY += 20;
-        doc.setFont('helvetica', 'bold');
-        doc.text('Termes & conditions', 20, startY);
-        doc.setFont('helvetica', 'normal');
-        doc.text('Le paiement est dû dans un mois à compter de la date d\'émission.', 20, startY + 6);
-
+    
+        // Fonctions utilitaires pour le PDF
+        function addBackground() {
+            doc.setFillColor(240, 240, 240);
+            doc.rect(0, 0, 210, 297, 'F');
+        }
+    
+        function addHeader() {
+            doc.setFillColor(255, 77, 77);
+            doc.rect(0, 0, 210, 40, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(28);
+            doc.text('Devis IJM Web', 105, 25, null, null, 'center');
+            doc.setFontSize(12);
+            doc.text('Votre partenaire en développement web', 105, 35, null, null, 'center');
+        }
+    
+        function addFooter() {
+            doc.setFillColor(255, 77, 77);
+            doc.rect(0, 277, 210, 20, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFontSize(10);
+            doc.text('IJM Web - www.ijmweb.com - contact@ijmweb.com - +33 6 12 34 56 78', 105, 287, null, null, 'center');
+            doc.text('Ce devis est généré automatiquement et n\'est pas un engagement contractuel.', 105, 292, null, null, 'center');
+        }
+    
+        function addClientInfo() {
+            doc.setTextColor(0, 0, 0);
+            doc.setFontSize(12);
+            doc.setFont("helvetica", "bold");
+            doc.text('Informations du client:', 20, 50);
+            doc.setFont("helvetica", "normal");
+            doc.text(`Nom: ${formData.name}`, 20, 60);
+            doc.text(`Email: ${formData.email}`, 20, 70);
+            doc.text(`Projet: ${formData.project}`, 20, 80);
+        }
+    
+        function addCompanyInfo() {
+            doc.setTextColor(0, 0, 0);
+            doc.setFontSize(12);
+            doc.setFont("helvetica", "bold");
+            doc.text('IJM Web', 140, 50);
+            doc.setFont("helvetica", "normal");
+            doc.text('123 Rue du Web', 140, 60);
+            doc.text('75000 Paris, France', 140, 70);
+            doc.text('SIRET: 123 456 789 00000', 140, 80);
+        }
+    
+        function addQuoteDetails() {
+            doc.setFillColor(230, 230, 230);
+            doc.rect(20, 100, 170, 10, 'F');
+            doc.setTextColor(0, 0, 0);
+            doc.setFontSize(12);
+            doc.setFont("helvetica", "bold");
+            doc.text('Détails du devis', 105, 107, null, null, 'center');
+    
+            doc.setFont("helvetica", "normal");
+            doc.text(`Plan sélectionné: ${selectedPlan}`, 20, 120);
+            doc.text(`Prix de base: ${basePrice} €`, 20, 130);
+    
+            // Tableau des services
+            let yPos = 150;
+            doc.line(20, yPos, 190, yPos);
+            yPos += 10;
+            doc.setFont("helvetica", "bold");
+            doc.text('Description', 25, yPos);
+            doc.text('Quantité', 100, yPos);
+            doc.text('Prix', 150, yPos);
+            doc.setFont("helvetica", "normal");
+            yPos += 10;
+            doc.line(20, yPos, 190, yPos);
+            yPos += 10;
+            doc.text(selectedPlan, 25, yPos);
+            doc.text('1', 105, yPos);
+            doc.text(`${basePrice} €`, 150, yPos);
+            yPos += 10;
+            doc.line(20, yPos, 190, yPos);
+    
+            // Total
+            yPos += 20;
+            doc.setFont("helvetica", "bold");
+            doc.text('Total HT:', 125, yPos);
+            doc.text(`${basePrice} €`, 150, yPos);
+            yPos += 10;
+            const tva = basePrice * 0.2;
+            doc.text('TVA (20%):', 125, yPos);
+            doc.text(`${tva.toFixed(2)} €`, 150, yPos);
+            yPos += 10;
+            doc.setTextColor(255, 77, 77);
+            doc.text('Total TTC:', 125, yPos);
+            doc.text(`${(basePrice + tva).toFixed(2)} €`, 150, yPos);
+        }
+    
+        function addMessage() {
+            doc.setTextColor(0, 0, 0);
+            doc.setFontSize(12);
+            doc.setFont("helvetica", "bold");
+            doc.text('Message du client:', 20, 230);
+            doc.setFont("helvetica", "normal");
+            const splitMessage = doc.splitTextToSize(formData.message, 170);
+            doc.text(splitMessage, 20, 240);
+        }
+    
+        // Génération du PDF
+        addBackground();
+        addHeader();
+        addFooter();
+        addClientInfo();
+        addCompanyInfo();
+        addQuoteDetails();
+        addMessage();
+    
         // Sauvegarder le fichier PDF
-        doc.save('devis-IJM.pdf');
+        doc.save('devis-IJM-Web.pdf');
+    
     }
 });
-
-
-
-
-
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]')

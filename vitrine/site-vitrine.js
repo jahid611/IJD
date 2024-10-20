@@ -1,179 +1,193 @@
 /*==================== MENU SHOW Y HIDDEN ====================*/
 const navMenu = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close')
+      navClose = document.getElementById('nav-close');
 
 /*===== MENU SHOW =====*/
 /* Validate if constant exists */
 if(navToggle){
     navToggle.addEventListener('click', () =>{
-        navMenu.classList.add('show-menu')
-    })
+        navMenu.classList.add('show-menu');
+    });
 }
 
 /*===== MENU HIDDEN =====*/
 /* Validate if constant exists */
 if(navClose){
     navClose.addEventListener('click', () =>{
-        navMenu.classList.remove('show-menu')
-    })
+        navMenu.classList.remove('show-menu');
+    });
 }
 
 /*==================== REMOVE MENU MOBILE ====================*/
-const navLink = document.querySelectorAll('.nav__link')
+const navLink = document.querySelectorAll('.nav__link');
 
 function linkAction(){
-    const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
-    navMenu.classList.remove('show-menu')
+    const navMenu = document.getElementById('nav-menu');
+    navMenu.classList.remove('show-menu');
 }
-navLink.forEach(n => n.addEventListener('click', linkAction))
+navLink.forEach(n => n.addEventListener('click', linkAction));
 
 /*==================== CHANGE BACKGROUND HEADER ====================*/
 function scrollHeader(){
-    const nav = document.getElementById('header')
-    // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag
-    if(this.scrollY >= 80) nav.classList.add('scroll-header'); else nav.classList.remove('scroll-header')
+    const nav = document.getElementById('header');
+    if(this.scrollY >= 80) nav.classList.add('scroll-header'); 
+    else nav.classList.remove('scroll-header');
 }
-window.addEventListener('scroll', scrollHeader)
+window.addEventListener('scroll', scrollHeader);
 
-/*==================== GENERATE PDF ====================*/
+
+/*==================== REDIRECTION 'CONTACTEZ-NOUS' ====================*/
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('quote-form');
+    const closeModalButton = document.getElementById('closeModalButton'); // Bouton "OK"
+    const modal = document.getElementById('pricingModal'); // Modale de sélection de plan
+
+    // Sélection des boutons de plan
+    const pricingButtons = document.querySelectorAll('.pricing__button');
+    let selectedPlan = 'Essentiel'; // Plan par défaut
+    let selectedPrice = 1000; // Prix par défaut
+
+    // Gestion de la sélection des boutons de plan
+    pricingButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Retirer la classe 'selected' de tous les boutons
+            pricingButtons.forEach(btn => btn.classList.remove('selected'));
+            
+            // Ajouter la classe 'selected' au bouton cliqué
+            button.classList.add('selected');
+
+            // Mettre à jour le plan et le prix associés
+            selectedPlan = button.getAttribute('data-plan');
+            selectedPrice = button.getAttribute('data-price') || 'Sur demande'; // Par défaut, 'Sur demande' si pas de prix
+
+            // Mettre à jour le texte dans la modale
+            document.getElementById('modalTitle').textContent = `Plan sélectionné : ${selectedPlan}`;
+            document.getElementById('modalText').textContent = `Le prix de base est : ${selectedPrice}. Veuillez remplir le formulaire pour un devis personnalisé.`;
+
+            // Afficher la modale
+            modal.style.display = 'flex';
+        });
+    });
+
+    // Gestion de la fermeture de la modale lorsque le bouton "OK" est cliqué
+    closeModalButton.addEventListener('click', function () {
+        modal.style.display = 'none';
+        // Redirection vers la page d'accueil uniquement si le plan sélectionné est "Expert"
+        if (selectedPlan === 'Expert') {
+            window.location.href = "/Acceuil/index.html#contact";
+        }
+    });
+
+    // Gestion de la soumission du formulaire pour générer le PDF
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Récupérer les données du formulaire
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            project: document.getElementById('project').value,
+            message: document.getElementById('message').value,
+            plan: selectedPlan,
+            basePrice: selectedPrice
+        };
+
+        // Générer le PDF
+        generateStyledPDF(formData);
+    });
+});
+
+
 function generateStyledPDF(formData) {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
     
-    // Titre "DEVIS"
-    doc.setFontSize(36);
-    doc.setFont("helvetica", "bold");
-    doc.text('DEVIS', 20, 30);
-
-    // Numéro de devis
-    doc.setFontSize(12);
-    doc.setFont("helvetica", "normal");
-    doc.text(`Devis n°12345`, 20, 40);
-
-    // Date de devis et validité
-    const today = new Date().toLocaleDateString();
-    doc.text(`Date du devis : ${today}`, 20, 50);
-    doc.text(`Validité du devis : 1 mois`, 20, 56);
-
-    // Section "CLIENT"
-    doc.setFont("helvetica", "bold");
+    // En-tête du PDF
+    doc.setFillColor(255, 77, 77);
+    doc.rect(0, 0, 210, 40, 'F');
+    doc.setFontSize(28);
+    doc.setTextColor(255, 255, 255);
+    doc.text('Devis IJM Web', 105, 25, null, null, 'center');
     doc.setFontSize(14);
-    doc.text('CÉLIA NAUDIN', 20, 70); // Nom du client
+    doc.text('Votre partenaire en développement web', 105, 32, null, null, 'center');
     
-    doc.setFontSize(12);
-    doc.setFont("helvetica", "normal");
-    doc.text('123-456-7890', 20, 78);
-    doc.text('hello@reallygreatsite.com', 20, 84);
-    doc.text('123 Anywhere St, Any City', 20, 90);
-
-    // Section "DESTINATAIRE"
-    doc.setFont("helvetica", "bold");
-    doc.setFontSize(14);
-    doc.text('À L\'ATTENTION DE', 150, 70); // Section droite
-    
-    doc.setFontSize(12);
-    doc.setFont("helvetica", "normal");
-    doc.text('Concordia', 150, 78);
-    doc.text('123-456-7890', 150, 84);
-    doc.text('Anywhere St, Any City', 150, 90);
-
-    // Tableau des services
-    doc.setFont("helvetica", "bold");
-    doc.setFontSize(14);
-    doc.text('DESCRIPTION', 20, 110);
-    doc.text('PRIX', 120, 110);
-    doc.text('QUANTITÉ', 140, 110);
-    doc.text('TOTAL', 160, 110);
-
-    // Contenu du tableau
-    const services = [
-        { description: 'Création de logo', prix: 300, quantite: 1, total: 300 },
-        { description: 'Conception d\'un flyer', prix: 300, quantite: 1, total: 300 },
-        { description: 'Carte de visite', prix: 300, quantite: 2, total: 600 },
-        { description: 'Illustration personnalisée', prix: 200, quantite: 4, total: 800 }
-    ];
-
-    let startY = 120;
-    services.forEach(service => {
-        doc.setFont("helvetica", "normal");
-        doc.text(service.description, 20, startY);
-        doc.text(`${service.prix} €`, 120, startY);
-        doc.text(`${service.quantite}`, 140, startY);
-        doc.text(`${service.total} €`, 160, startY);
-        startY += 10;
-    });
-
-    // Sous-total, TVA et total
-    doc.setFont("helvetica", "bold");
-    doc.text('Sous-total :', 120, startY + 10);
-    doc.text('2300 €', 160, startY + 10);
-
-    doc.text('TVA (20%) :', 120, startY + 20);
-    doc.text('460 €', 160, startY + 20);
-
-    doc.setFontSize(16);
-    doc.setTextColor(255, 77, 77); // Rouge pour le total
-    doc.text('TOTAL :', 120, startY + 35);
-    doc.text('2760 €', 160, startY + 35);
-
-    // Footer - Termes et conditions
-    doc.setFontSize(10);
+    // Informations du client et de l'entreprise
     doc.setTextColor(0, 0, 0);
-    doc.text('Termes et conditions', 20, startY + 50);
-    doc.setFont("helvetica", "normal");
-    doc.text('Le paiement est dû dans un mois', 20, startY + 55);
-    doc.text('Un acompte de 25% est requis', 20, startY + 60);
-
-    // Footer - signature
-    doc.setFontSize(10);
-    doc.text('Signature suivie de la mention "bon pour accord"', 20, startY + 70);
-
-    // Footer - remerciements
-    doc.setFont("helvetica", "bold");
     doc.setFontSize(12);
-    doc.text('MERCI DE VOTRE CONFIANCE', 105, 280, null, null, 'center');
+    doc.setFont("helvetica", "bold");
+    doc.text('Informations du client:', 20, 50);
+    doc.setFont("helvetica", "normal");
+    doc.text(`Nom: ${formData.name}`, 20, 60);
+    doc.text(`Email: ${formData.email}`, 20, 66);
+    doc.text(`Projet: ${formData.project}`, 20, 72);
+    
+    // Informations de l'entreprise
+    doc.setFont("helvetica", "bold");
+    doc.text('IJM Web', 140, 50);
+    doc.setFont("helvetica", "normal");
+    doc.text('123 Rue du Web', 140, 60);
+    doc.text('75000 Paris, France', 140, 66);
+    doc.text('SIRET: 123 456 789 00000', 140, 72);
+    
+    const basePrice = parseFloat(formData.basePrice);
+    doc.setFillColor(240, 240, 240);
+    doc.rect(20, 90, 170, 10, 'F');
+    doc.setFontSize(14);
+    doc.setFont("helvetica", "bold");
+    doc.text('Détails du devis', 25, 97);
 
-    // Sauvegarder le PDF
-    doc.save('devis-IJM.pdf');
+    doc.setFontSize(12);
+    doc.setFont("helvetica", "normal");
+    doc.text(`Plan sélectionné: ${formData.plan}`, 20, 110);
+    doc.text(`Prix de base: ${basePrice.toFixed(2)} €`, 20, 116);
+
+    const tableTop = 140;
+    doc.line(20, tableTop, 190, tableTop);
+    doc.text('Description', 25, tableTop - 5);
+    doc.text('Quantité', 100, tableTop - 5);
+    doc.text('Prix', 170, tableTop - 5, { align: 'right' });
+    doc.line(20, tableTop + 5, 190, tableTop + 5);
+
+    doc.text(formData.plan, 25, tableTop + 15);
+    doc.text('1', 105, tableTop + 15);
+    doc.text(`${basePrice.toFixed(2)} €`, 170, tableTop + 15, { align: 'right' });
+
+    doc.line(20, tableTop + 25, 190, tableTop + 25);
+
+    const totalsTop = tableTop + 40;
+    doc.setFont("helvetica", "bold");
+    doc.text(`Total HT:`, 130, totalsTop);
+    doc.text(`${basePrice.toFixed(2)} €`, 190, totalsTop, { align: 'right' });
+
+    const tva = basePrice * 0.2;
+    doc.text(`TVA (20%):`, 130, totalsTop + 10);
+    doc.text(`${tva.toFixed(2)} €`, 190, totalsTop + 10, { align: 'right' });
+
+    doc.setFont("helvetica", "bold");
+    const totalTTC = basePrice + tva;
+    doc.setTextColor(255, 77, 77);
+    doc.text(`Total TTC:`, 130, totalsTop + 20);
+    doc.text(`${totalTTC.toFixed(2)} €`, 190, totalsTop + 20, { align: 'right' });
+
+    doc.setFont("helvetica", "normal");
+    doc.setTextColor(0, 0, 0);
+    doc.text('Message du client:', 20, 230);
+    const splitMessage = doc.splitTextToSize(formData.message, 170);
+    doc.text(splitMessage, 20, 240);
+
+    doc.setFillColor(255, 77, 77);
+    doc.rect(0, 270, 210, 20, 'F');
+    doc.setFontSize(10);
+    doc.setTextColor(255, 255, 255);
+    doc.text('IJM Web - www.ijmweb.com - contact@ijmweb.com - +33 6 12 34 56 78', 105, 280, null, null, 'center');
+    doc.text('Ce devis est généré automatiquement et n\'est pas un engagement contractuel.', 105, 285, null, null, 'center');
+
+    doc.save('devis-IJM-Web.pdf');
 }
 
-// Event listener pour le formulaire
-document.getElementById('quote-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        project: document.getElementById('project').value,
-        message: document.getElementById('message').value
-    };
-    generateStyledPDF(formData);
-});
+    
 
-
-
-/*==================== PRICING CALCULATOR ====================*/
-const pricingButtons = document.querySelectorAll('.pricing__button');
-
-pricingButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const plan = button.getAttribute('data-plan');
-        let basePrice;
-        switch(plan) {
-            case 'starter':
-                basePrice = 2999;
-                break;
-            case 'business':
-                basePrice = 4999;
-                break;
-            case 'enterprise':
-                basePrice = 'Sur mesure';
-                break;
-        }
-        alert(`Vous avez sélectionné le plan ${plan.charAt(0).toUpperCase() + plan.slice(1)}. ${typeof basePrice === 'number' ? `Le prix de base est de ${basePrice}€.` : basePrice} Veuillez remplir le formulaire de contact pour obtenir un devis personnalisé.`);
-    });
-});
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]')
@@ -201,7 +215,6 @@ const sr = ScrollReveal({
     distance: '60px',
     duration: 2000,
     delay: 200,
-//     reset: true
 });
 
 sr.reveal('.home__data, .home__img, .features__content, .pricing__content, .contact__content',{}); 
@@ -210,6 +223,8 @@ sr.reveal('.home__img',{delay: 600});
 sr.reveal('.home__social-icon',{ interval: 200}); 
 sr.reveal('.features__img, .contact__img',{origin: 'left'}); 
 sr.reveal('.pricing__img, .contact__form',{origin: 'right'});
+
+
 
 const navmenu = document.getElementById('nav-menu');
 const navtoggle = document.getElementById('nav-toggle');

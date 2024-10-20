@@ -3,45 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IJM Web - Site Vitrine</title></title>
+    <title>IJM Web - Site Vitrine Professionnel</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/vitrine/site-vitrine.css">
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
+
+    <div id="pricingModal" class="modal">
+        <div class="modal-content">
+            <h2 id="modalTitle">Plan sélectionné</h2>
+            <p id="modalText">Description du plan ici.</p>
+            <button id="closeModalButton" class="pricing-modal-button">OK</button>
+        </div>
+    </div>
+
+    
+
+    <header class="header" id="header">
+        <nav class="nav container">
             <div class="logo-container">
-                <img src="/Images/logo.png" alt="IJM Logo" class="logo">
-                <p class="logo-text">IJM Développement Web</p>
+                <img src="/Images/logo.png"  alt="IJM Logo" class="logo">
+                <h1 class="logo-text">IJM Développement Web</h1>
             </div>
-            <ul class="nav-links">
-                <li class="dropdown" id="dropdown-offres">
-                    
-                    <ul class="dropdown-menu">
-                        <li><a href="../vitrine/site-vitrine.html">Site vitrine</a></li>
-                        <li><a href="../boutique/site-boutique.html">Site boutique</a></li>
-                        <li><a href="../landing/landing-page.html">Landing page</a></li>
-                        <li><a href="store-locator.html">Store locator</a></li>
-                    </ul>
-                </li>
-                <li><a href="/Acceuil/index.html">Accueil</a></li>
-                <li><a href="/conditionsUser/conditions-utilisation.html">conditions d'utilisation</a></li>
-                <li><a href="/Mentionslgl/mentions-legales.html">Mentions legales</a></li>
-                <li><a href="/Politique/politique-confidentialite.html">Politique de confidentialité</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="/boutique/site-boutique.html">Site Boutique</a></li>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="/Acceuil/index.html" class="nav-link">Accueil</a></li>
+                <li><a href="/conditionsUser/conditions-utilisation.html" class="nav-link">Conditions d'utilisation</a></li>
+                <li><a href="/Mentionslgl/mentions-legales.html" class="nav-link">Mentions légales</a></li>
+                <li><a href="/Politique/politique-confidentialite.html" class="nav-link">Politique de confidentialité</a></li>
+                <li><a href="/Acceuil/index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="/boutique/site-boutique.html" class="nav-link">Site Boutique</a></li>
             </ul>
-            
+
         </nav>
     </header>
-    
 
     <main class="main">
         <section class="home section" id="home">
             <div class="home__container container">
                 <div class="home__content">
-                    <h1 class="home__title">Site vitrine Avancé</h1>
+                    <h2 class="home__title">Site vitrine Avancé</h2>
                     <h3 class="home__subtitle">Présentez vos services et projets en ligne</h3>
                     <p class="home__description">Créez un site vitrine moderne et captivant pour montrer votre savoir-faire, vos projets, et votre expertise</p>
                     <a href="#pricing" class="button button--flex">
@@ -49,7 +50,7 @@
                     </a>
                 </div>
                 <div class="home__img">
-                    <img src="/Images/fleuristevitrine.png" alt="Site Boutique Avancé" class="home__blob-img">
+                    <img src="/Images/fleuristevitrine.png" alt="Site Vitrine Avancé" class="home__blob-img">
                 </div>
             </div>
         </section>
@@ -96,9 +97,10 @@
                 <div class="pricing__content">
                     <h3 class="pricing__title">Essentiel</h3>
                     <div class="pricing__price">
-                        <span class="pricing__currency">€</span>
                         1000
-                        <span class="pricing__period">/Site</span>
+                        <span class="pricing__currency">€</span>
+                        
+                        <span class="pricing__period"></span>
                     </div>
                     <ul class="pricing__features">
                         <li><i class="fas fa-check"></i> Création d'une page vitrine</li>
@@ -106,67 +108,71 @@
                         <li><i class="fas fa-check"></i> Optimisation SEO </li>
                         <li><i class="fas fa-check"></i> Design responsive</li>
                     </ul>
-                    <button class="button pricing__button" data-plan="starter">Choisir ce plan</button>
+                    <button class="pricing__button" data-plan="Essentiel" data-price="1000">Choisir ce plan</button>
                 </div>
                 <div class="pricing__content pricing__content-best">
                     <span class="pricing__badge">Recommandé</span>
-                    <h3 class="pricing__title">Professionnel.</h3>
+                    <h3 class="pricing__title">Professionnel</h3>
                     <div class="pricing__price">
-                        <span class="pricing__currency">€</span>
                         2500
-                        <span class="pricing__period">/Site</span>
+                        <span class="pricing__currency">€</span>
+                        
+                        <span class="pricing__period"></span>
                     </div>
                     <ul class="pricing__features">
                         <li><i class="fas fa-check"></i> Création jusqu'à 5 pages</li>
                         <li><i class="fas fa-check"></i> Formulaire de contact avancé</li>
-                        <li><i class="fas fa-check"></i>  Optimisation SEO avancée</li>
+                        <li><i class="fas fa-check"></i> Optimisation SEO avancée</li>
                         <li><i class="fas fa-check"></i> Analyse des ventes</li>
                         <li><i class="fas fa-check"></i> Support technique 3 mois</li>
                     </ul>
-                    <button class="button pricing__button" data-plan="business">Choisir ce plan</button>
+                    <button class="pricing__button" data-plan="Essentiel" data-price="2500">Choisir ce plan</button>
                 </div>
                 <div class="pricing__content">
                     <h3 class="pricing__title">Expert</h3>
                     <div class="pricing__price">
-                        <span class="pricing__currency">€</span>
-                        sur Devis
+                        Sur Mesure
+                        <span class="pricing__currency"></span>
+                        
                     </div>
                     <ul class="pricing__features">
-                        <li><i class="fas fa-check"></i>Pages illimitées</li>
-                        <li><i class="fas fa-check"></i> Fonctionnalités personnalisées (portefeuille, blog, etc.)</li>
-                        <li><i class="fas fa-check"></i>Intégrations spécifiques (API, CRM, etc.)</li>
+                        <li><i class="fas fa-check"></i> Pages illimitées</li>
+                        <li><i class="fas fa-check"></i> Fonctionnalités personnalisées</li>
+                        <li><i class="fas fa-check"></i> Intégrations spécifiques</li>
                         <li><i class="fas fa-check"></i> Support dédié 24/7</li>
                     </ul>
-                    <button class="button pricing__button" data-plan="enterprise">Nous contacter</button>
+                    <button class="pricing__button" data-plan="Expert" data-price="Sur Demande">Contactez-nous</button>
                 </div>
             </div>
         </section>
 
         <section class="contact section" id="contact">
-            <h2 class="section__title">votre devis gratuit ➜</h2>
+            <h2 class="section__title">Votre devis gratuit</h2>
             <div class="contact__container container">
                 <form id="quote-form" class="contact__form">
                     <div class="contact__inputs">
                         <div class="contact__content">
                             <label for="name" class="contact__label">Nom</label>
-                            <input type="text" id="name" class="contact__input" required>
+                            <input type="text" id="name" name="name" class="contact__input" required>
                         </div>
                         <div class="contact__content">
                             <label for="email" class="contact__label">Email</label>
-                            <input type="email" id="email" class="contact__input" required>
+                            <input type="email" id="email" name="email" class="contact__input" required>
                         </div>
                     </div>
                     <div class="contact__content">
                         <label for="project" class="contact__label">Projet</label>
-                        <input type="text" id="project" class="contact__input" required>
+                        <input type="text" id="project" name="project" class="contact__input" required>
                     </div>
                     <div class="contact__content">
                         <label for="message" class="contact__label">Message</label>
-                        <textarea id="message" cols="0" rows="7" class="contact__input" required></textarea>
+                        <textarea id="message" name="message" cols="0" rows="7" class="contact__input" required></textarea>
                     </div>
+                    <!-- Ajoutez le champ caché ici -->
+                    <input type="hidden" id="selected-plan" name="selected-plan" value="">
                     <div>
                         <button type="submit" class="button button--flex">
-                            devis (pdf) gratuit
+                            Devis (PDF) gratuit
                             <i class="fas fa-paper-plane button__icon"></i>
                         </button>
                     </div>
@@ -184,15 +190,17 @@
             <div class="footer__content">
                 <h3 class="footer__title">Nos services</h3>
                 <ul class="footer__links">
-                    <li><a href="/boutique/site-boutique.html" class="no-underline" class="footer__link">Site boutique</a></li>
-                    <li><a href="#" class="no-underline" class="footer__link">Application web</a></li>
+                    <li><a href="/boutique/site-boutique.html" class="footer__link">Site boutique</a></li>
+                    <li><a href="#" class="footer__link">Application web</a></li>
                 </ul>
             </div>
             <div class="footer__content">
                 <h3 class="footer__title">Contactez-nous</h3>
                 <ul class="footer__links">
-                    <li><a href="mailto:contact@ijmweb.com" class="no-underline" class="footer__link">contact@ijmweb.com</a></li>
-                    <li><a href="tel:+33612345678" class="no-underline" class="footer__link">+33 6 12 34 56 78</a></li>
+                    <li><a href="mailto:contact@ijmweb.com" class="footer__link">contact@ijmweb.com</a></li>
+                    <li><a href="tel:+33612345678" class="footer__link">+33 6 12 34 56 78</a></li>
+                    <!-- Bouton Contactez-nous -->
+                    
                 </ul>
             </div>
             <div class="footer__content">
@@ -204,10 +212,20 @@
                 </div>
             </div>
         </div>
-        <p class="footer__copy">&#169; 2023 IJM Web. Tous droits réservés</p>
+        <p class="footer__copy">&copy; 2023 IJM Web. Tous droits réservés</p>
     </footer>
 
+    <div id="pricingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modalTitle">Plan sélectionné</h2>
+            <p id="modalText">Description du plan ici.</p>
+            <button id="close-modal">OK</button>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
     <script src="/vitrine/site-vitrine.js"></script>
 </body>
 </html>

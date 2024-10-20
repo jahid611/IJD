@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IJM Web - Création de Site Web</title>
+    <title>IJM Web - Refonte de Site</title>
     <style>
         /* Reset CSS */
         * {
@@ -65,7 +65,7 @@
 
         /* Hero section */
         .hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1600x900/?website');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1600x900/?website-redesign');
             background-size: cover;
             background-position: center;
             height: 60vh;
@@ -87,24 +87,24 @@
             margin: 0 auto;
         }
 
-        /* Services section */
-        .services {
+        /* Benefits section */
+        .benefits {
             padding: 60px 0;
         }
 
-        .services h2 {
+        .benefits h2 {
             text-align: center;
             color: var(--secondary-color);
             margin-bottom: 40px;
         }
 
-        .service-grid {
+        .benefit-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
         }
 
-        .service-card {
+        .benefit-card {
             background-color: var(--card-background);
             border-radius: 8px;
             padding: 30px;
@@ -112,17 +112,17 @@
             transition: transform 0.3s ease;
         }
 
-        .service-card:hover {
+        .benefit-card:hover {
             transform: translateY(-10px);
         }
 
-        .service-card i {
+        .benefit-card i {
             font-size: 3rem;
             color: var(--primary-color);
             margin-bottom: 20px;
         }
 
-        .service-card h3 {
+        .benefit-card h3 {
             color: var(--secondary-color);
             margin-bottom: 15px;
         }
@@ -148,6 +148,7 @@
         .step {
             text-align: center;
             max-width: 200px;
+            margin: 20px;
         }
 
         .step-number {
@@ -161,6 +162,32 @@
             justify-content: center;
             margin: 0 auto 20px;
             font-weight: bold;
+        }
+
+        /* CTA section */
+        .cta {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .cta h2 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #ff3333;
         }
 
         /* Footer */
@@ -178,9 +205,9 @@
         <nav>
             <ul>
                 <li><a href="/Acceuil/index.html#services">Accueil</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="#benefits">Avantages</a></li>
                 <li><a href="#process">Processus</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="/Acceuil/index.html#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -188,34 +215,34 @@
     <main>
         <section id="home" class="hero">
             <div class="container">
-                <h1>Création de Site Web Professionnel</h1>
-                <p>Donnez vie à votre présence en ligne avec des sites web sur mesure, performants et esthétiques.</p>
+                <h1>Refonte de Site Web</h1>
+                <p>Donnez un nouveau souffle à votre présence en ligne avec une refonte complète de votre site web.</p>
             </div>
         </section>
 
-        <section id="services" class="services">
+        <section id="benefits" class="benefits">
             <div class="container">
-                <h2>Nos Services de Création Web</h2>
-                <div class="service-grid">
-                    <div class="service-card">
-                        <i class="fas fa-laptop-code"></i>
-                        <h3>Site Vitrine</h3>
-                        <p>Présentez votre entreprise avec élégance et professionnalisme.</p>
+                <h2>Avantages de la Refonte</h2>
+                <div class="benefit-grid">
+                    <div class="benefit-card">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <h3>Amélioration des Performances</h3>
+                        <p>Optimisez la vitesse de chargement et les performances globales de votre site.</p>
                     </div>
-                    <div class="service-card">
+                    <div class="benefit-card">
                         <i class="fas fa-mobile-alt"></i>
-                        <h3>Site Responsive</h3>
-                        <p>Des sites adaptés à tous les appareils pour une expérience optimale.</p>
+                        <h3>Design Responsive</h3>
+                        <p>Assurez-vous que votre site s'affiche parfaitement sur tous les appareils.</p>
                     </div>
-                    <div class="service-card">
-                        <i class="fas fa-shopping-cart"></i>
-                        <h3>E-commerce</h3>
-                        <p>Lancez votre boutique en ligne et boostez vos ventes.</p>
+                    <div class="benefit-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Meilleur Taux de Conversion</h3>
+                        <p>Augmentez vos conversions grâce à une expérience utilisateur optimisée.</p>
                     </div>
-                    <div class="service-card">
-                        <i class="fas fa-cogs"></i>
-                        <h3>Maintenance</h3>
-                        <p>Gardez votre site à jour et performant avec notre service de maintenance.</p>
+                    <div class="benefit-card">
+                        <i class="fas fa-search"></i>
+                        <h3>Optimisation SEO</h3>
+                        <p>Améliorez votre visibilité dans les moteurs de recherche.</p>
                     </div>
                 </div>
             </div>
@@ -223,29 +250,46 @@
 
         <section id="process" class="process">
             <div class="container">
-                <h2>Notre Processus de Création</h2>
+                <h2>Notre Processus de Refonte</h2>
                 <div class="process-steps">
                     <div class="step">
                         <div class="step-number">1</div>
-                        <h3>Consultation</h3>
-                        <p>Nous discutons de vos besoins et objectifs pour votre site web.</p>
+                        <h3>Analyse</h3>
+                        <p>Évaluation approfondie de votre site actuel et de vos objectifs.</p>
                     </div>
                     <div class="step">
                         <div class="step-number">2</div>
-                        <h3>Conception</h3>
-                        <p>Nous créons des maquettes et des wireframes pour visualiser votre futur site.</p>
+                        <h3>Stratégie</h3>
+                        <p>Élaboration d'une stratégie de refonte adaptée à vos besoins.</p>
                     </div>
                     <div class="step">
                         <div class="step-number">3</div>
-                        <h3>Développement</h3>
-                        <p>Nous codons votre site avec les dernières technologies web.</p>
+                        <h3>Design</h3>
+                        <p>Création d'un nouveau design moderne et attrayant.</p>
                     </div>
                     <div class="step">
                         <div class="step-number">4</div>
-                        <h3>Tests et Lancement</h3>
-                        <p>Nous testons rigoureusement votre site avant de le mettre en ligne.</p>
+                        <h3>Développement</h3>
+                        <p>Intégration et développement du nouveau site avec les dernières technologies.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <h3>Tests</h3>
+                        <p>Tests approfondis pour garantir la qualité et les performances.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">6</div>
+                        <h3>Lancement</h3>
+                        <p>Mise en ligne du nouveau site et suivi post-lancement.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>Prêt à donner un nouveau souffle à votre site web ?</h2>
+                <a href="/Acceuil/index.html#contact" class="cta-button">Demandez un devis</a>
             </div>
         </section>
     </main>
@@ -258,7 +302,7 @@
 
     <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     <script>
-        // Animation des cartes de service au défilement
+        // Animation des cartes d'avantages au défilement
         function isElementInViewport(el) {
             var rect = el.getBoundingClientRect();
             return (
@@ -269,8 +313,8 @@
             );
         }
 
-        function animateServiceCards() {
-            var cards = document.querySelectorAll('.service-card');
+        function animateBenefitCards() {
+            var cards = document.querySelectorAll('.benefit-card');
             cards.forEach(function(card) {
                 if (isElementInViewport(card)) {
                     card.style.opacity = '1';
@@ -281,17 +325,17 @@
 
         // Initialiser les cartes avec une opacité de 0 et une translation vers le bas
         document.addEventListener('DOMContentLoaded', function() {
-            var cards = document.querySelectorAll('.service-card');
+            var cards = document.querySelectorAll('.benefit-card');
             cards.forEach(function(card) {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(20px)';
                 card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             });
-            animateServiceCards();
+            animateBenefitCards();
         });
 
         // Animer les cartes au défilement
-        window.addEventListener('scroll', animateServiceCards);
+        window.addEventListener('scroll', animateBenefitCards);
 
         // Navigation fluide
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {

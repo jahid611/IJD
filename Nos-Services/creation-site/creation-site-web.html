@@ -63,11 +63,12 @@
             color: var(--primary-color);
         }
 
-        /* Hero section */
+        /* Hero section avec l'image d'arrière-plan */
         .hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1600x900/?website');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/Nos-Services/creation-site/crtsiteweb.jpg'); /* Ajouter votre image ici */
             background-size: cover;
             background-position: center;
+            background-attachment: fixed; /* L'image reste fixe lors du défilement */
             height: 60vh;
             display: flex;
             align-items: center;

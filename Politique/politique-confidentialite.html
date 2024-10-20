@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de Confidentialité - IJM Web</title>
+    <style>
+        :root {
+            --primary-color: #ff4d4d;
+            --secondary-color: #333;
+            --background-color: #1a1a1a;
+            --text-color: #f2f2f2;
+            --highlight-color: #ffffff;
+            --font-main: 'Poppins', sans-serif;
+            --border-radius: 10px;
+        }
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
+    padding: 1rem 0;
+}
+
+.header.scrolled {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 0.5rem 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform var(--transition-speed);
+    border-radius: 15px;
+    
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.logo-text {
+    margin-left: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 1;
+    transition: opacity var(--transition-speed);
+}
+
+.header.scrolled .logo-text {
+    opacity: 0;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    
+}
+
+.nav-links li {
+    margin-left: 2rem;
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color var(--transition-speed);
+    font-size: 0.875rem;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all var(--transition-speed) ease-in-out;
+}
+
+.nav-links a:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+}
+  
+        h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-top: 1rem;
+}
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            background-color: var(--secondary-color);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+            margin-top: 200px;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            color: var(--highlight-color);
+            margin-bottom: 1rem;
+        }
+
+        p, ul {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        ul {
+            list-style: inside disc;
+            margin-left: 1rem;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+            text-align: center;
+            color: var(--text-color);
+            margin-top: 2rem;
+            border-top: 2px solid var(--primary-color);
+            margin-top: 65px;
+        }
+        
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+nav a {
+    color: #6b6b6b;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+    margin-bottom: -19px;
+}
+nav a:hover {
+    color: var(--primary-color);
+}
+
+    .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Aligne à gauche */
+    padding: 1rem;
+}
+
+.logo {
+    max-width: 50px;
+    margin-right: 1rem;
+    border-radius: 15px;
+}
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo-container">
+                <img src="/Images/logo.png" alt="IJM Logo" class="logo">
+                <p class="logo-text">IJM Développement Web</p>
+            </div>
+            <ul class="nav-links">
+                 </ul>
+                </li>
+                <li><a href="/Acceuil/index.html">Accueil</a></li>
+                <li><a href="/conditionsUser/conditions-utilisation.html">conditions d'utilisation</a></li>
+                <li><a href="/Mentionslgl/mentions-legales.html">Mentions legales</a></li>
+                
+         
+                
+            </ul>
+            
+        </nav>
+    </header>
+
+<div class="container">
+    <h2>Collecte des informations</h2>
+    <p>
+        Nous recueillons des informations lorsque vous remplissez un formulaire ou interagissez avec notre site. Les informations collectées peuvent inclure votre nom, adresse email, numéro de téléphone, etc.
+    </p>
+
+    <h2>Utilisation des informations</h2>
+    <p>
+        Les informations que nous collectons sont utilisées pour :
+    </p>
+    <ul>
+        <li>Améliorer notre site web</li>
+        <li>Personnaliser votre expérience</li>
+        <li>Améliorer le service client</li>
+        <li>Vous contacter par email</li>
+    </ul>
+
+    <h2>Protection des informations</h2>
+    <p>
+        Nous mettons en œuvre des mesures de sécurité pour protéger vos informations personnelles.
+    </p>
+
+    <h2>Consentement</h2>
+    <p>
+        En utilisant notre site, vous consentez à notre politique de confidentialité.
+    </p>
+</div>
+
+<footer>
+    <p>&copy; 2023 IJM Développement Web. Tous droits réservés.</p>
+</footer>
+
+</body>
+</html>

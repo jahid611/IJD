@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IJM Web - Site Boutique Avancé</title>
+    <link rel="stylesheet" href="/boutique/site-boutique.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo-container">
+                <img src="/Images/logo.png" alt="IJM Logo" class="logo">
+                <p class="logo-text">IJM Développement Web</p>
+            </div>
+            <ul class="nav-links">
+                
+                    
+                    <ul class="dropdown-menu">
+                        <li><a href="../vitrine/site-vitrine.html">Site vitrine</a></li>
+                        <li><a href="../boutique/site-boutique.html">Site boutique</a></li>
+                        <li><a href="../landing/landing-page.html">Landing page</a></li>
+                        <li><a href="store-locator.html">Store locator</a></li>
+                    </ul>
+                </li>
+                <li><a href="/Acceuil/index.html">Accueil</a></li>
+                <li><a href="/conditionsUser/conditions-utilisation.html">conditions d'utilisation</a></li>
+                <li><a href="/Mentionslgl/mentions-legales.html">Mentions legales</a></li>
+                <li><a href="/Politique/politique-confidentialite.html">Politique de confidentialité</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="/vitrine/site-vitrine.html">Site Vitrine</a></li>
+            </ul>
+
+            
+
+        </nav>
+    </header>
+    <main class="main">
+        <section class="home section" id="home">
+            <div class="home__container container">
+                <div class="home__content">
+                    <h1 class="home__title">Site Boutique Avancé</h1>
+                    <h3 class="home__subtitle">Lancez votre boutique en ligne avec des fonctionnalités avancées</h3>
+                    <p class="home__description">Créez une expérience d'achat en ligne exceptionnelle avec notre solution de site e-commerce sur mesure, conçue pour maximiser vos ventes et fidéliser vos clients.</p>
+                    <a href="#pricing" class="button button--flex">
+                        Commencer <i class="fas fa-arrow-right button__icon" ></i>
+                    </a>
+                </div>
+                <div class="home__img">
+                    <img src="/Images/sitebtq.png" alt="Site Boutique Avancé" class="home__blob-img">
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features section">
+            <h2 class="section__title">Fonctionnalités Avancées</h2>
+            <div class="features__container container">
+                <div class="features__content">
+                    <i class="fas fa-shopping-cart features__icon"></i>
+                    <h3 class="features__title">Panier d'achat avancé</h3>
+                    <p class="features__description">Gestion facile des commandes avec options de sauvegarde et récupération.</p>
+                </div>
+                <div class="features__content">
+                    <i class="fas fa-credit-card features__icon"></i>
+                    <h3 class="features__title">Paiements sécurisés</h3>
+                    <p class="features__description">Intégration de multiples options de paiement sécurisées.</p>
+                </div>
+                <div class="features__content">
+                    <i class="fas fa-box features__icon"></i>
+                    <h3 class="features__title">Gestion des stocks</h3>
+                    <p class="features__description">Suivi en temps réel des stocks et notifications automatiques.</p>
+                </div>
+                <div class="features__content">
+                    <i class="fas fa-mobile-alt features__icon"></i>
+                    <h3 class="features__title">100% Responsive</h3>
+                    <p class="features__description">Expérience d'achat optimale sur tous les appareils.</p>
+                </div>
+                <div class="features__content">
+                    <i class="fas fa-chart-line features__icon"></i>
+                    <h3 class="features__title">Analyse des ventes</h3>
+                    <p class="features__description">Tableaux de bord détaillés pour suivre vos performances.</p>
+                </div>
+                <div class="features__content">
+                    <i class="fas fa-users features__icon"></i>
+                    <h3 class="features__title">Gestion des clients</h3>
+                    <p class="features__description">Profils clients détaillés et programme de fidélité intégré.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing section">
+            <h2 class="section__title">Tarifs</h2>
+            <div class="pricing__container container">
+                <div class="pricing__content">
+                    <h3 class="pricing__title">Starter</h3>
+                    <div class="pricing__price">
+                        <span class="pricing__currency">€</span>
+                        2999
+                        <span class="pricing__period">/site</span>
+                    </div>
+                    <ul class="pricing__features">
+                        <li><i class="fas fa-check"></i> Jusqu'à 100 produits</li>
+                        <li><i class="fas fa-check"></i> Panier d'achat basique</li>
+                        <li><i class="fas fa-check"></i> Paiements sécurisés</li>
+                        <li><i class="fas fa-check"></i> Design responsive</li>
+                    </ul>
+                    <button class="pricing__button" data-plan="starter">Choisir ce plan</button>
+                </div>
+                <div class="pricing__content pricing__content-best">
+                    <span class="pricing__badge">Recommandé</span>
+                    <h3 class="pricing__title">Business</h3>
+                    <div class="pricing__price">
+                        <span class="pricing__currency">€</span>
+                        4999
+                        <span class="pricing__period">/site</span>
+                    </div>
+                    <ul class="pricing__features">
+                        <li><i class="fas fa-check"></i> Jusqu'à 1000 produits</li>
+                        <li><i class="fas fa-check"></i> Panier d'achat avancé</li>
+                        <li><i class="fas fa-check"></i> Gestion des stocks</li>
+                        <li><i class="fas fa-check"></i> Analyse des ventes</li>
+                        <li><i class="fas fa-check"></i> Programme de fidélité</li>
+                    </ul>
+                    <button class="button pricing__button" data-plan="business">Choisir ce plan</button>
+                </div>
+                <div class="pricing__content">
+                    <h3 class="pricing__title">Enterprise</h3>
+                    <div class="pricing__price">
+                        <span class="pricing__currency">€</span>
+                        Sur mesure
+                    </div>
+                    <ul class="pricing__features">
+                        <li><i class="fas fa-check"></i> Produits illimités</li>
+                        <li><i class="fas fa-check"></i> Fonctionnalités personnalisées</li>
+                        <li><i class="fas fa-check"></i> Intégrations sur mesure</li>
+                        <li><i class="fas fa-check"></i> Support dédié 24/7</li>
+                    </ul>
+                    <button class="button pricing__button" data-plan="enterprise">Nous contacter</button>
+                </div>
+            </div>
+        </section>
+
+        <div id="pricingModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2 id="modalTitle">Plan sélectionné</h2>
+                <p id="modalText">Description du plan ici.</p>
+                <button class="button pricing-modal-button">OK</button>
+            </div>
+        </div>
+
+        <section id="contact" class="contact section">
+            <h2 class="section__title">votre devis gratuit ➜</h2>
+            <h2 class="section__title"></h2>
+            <div class="contact__container container">
+                <form id="quote-form" class="contact__form">
+                    <div class="contact__inputs">
+                        <div class="contact__content">
+                            <label for="name" class="contact__label">Nom</label>
+                            <input type="text" id="name" class="contact__input" required>
+                        </div>
+                        <div class="contact__content">
+                            <label for="email" class="contact__label">Email</label>
+                            <input type="email" id="email" class="contact__input" required>
+                        </div>
+                    </div>
+                    <div class="contact__content">
+                        <label for="project" class="contact__label">Projet</label>
+                        <input type="text" id="project" class="contact__input" required>
+                    </div>
+                    <div class="contact__content">
+                        <label for="message" class="contact__label">Message</label>
+                        <textarea id="message" cols="0" rows="7" class="contact__input" required></textarea>
+                    </div>
+                    <button type="submit" class="button button--flex">
+                         devis (pdf) gratuit
+                        <i class="fas fa-paper-plane button__icon"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    
+
+    <footer class="footer">
+        <div class="footer__container container">
+            <div class="footer__content">
+                <h3 class="footer__title">IJM Web</h3>
+                <span class="footer__subtitle">Développement web professionnel</span>
+            </div>
+            <div class="footer__content">
+                <h3 class="footer__title">Nos services</h3>
+                <ul class="footer__links">
+                    <li><a href="/vitrine/site-vitrine.html" class="no-underline" class="footer__link">Site vitrine</a></li>
+                    <li><a href="#" class="no-underline" class="footer__link">Site e-commerce</a></li>
+
+                </ul>
+            </div>
+            <div class="footer__content">
+                <h3 class="footer__title">Contactez-nous</h3>
+                <ul class="footer__links">
+                    <li><a href="mailto:contact@ijmweb.com" class="no-underline" class="footer__link">contact@ijmweb.com</a></li>
+                    <li><a href="tel:+33612345678" class="no-underline" class="footer__link">+33 6 12 34 56 78</a></li>
+                </ul>
+            </div>
+            <div class="footer__content">
+                <h3 class="footer__title">Suivez-nous</h3>
+                <div class="footer__social">
+                    <a href="#" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <p class="footer__copy">&#169; 2023 IJM Web. Tous droits réservés</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="/boutique/site-boutique.js"></script>
+</body>
+</html>

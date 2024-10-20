@@ -1,0 +1,83 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1a1a1a;
+    color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #ff4d4d; /* Rouge IJM */
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    width: 80%;
+}
+
+.site-choice {
+    background-color: #333333;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    width: 40%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.site-choice h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #ff4d4d; /* Rouge IJM */
+}
+
+.site-choice p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.site-choice a {
+    background-color: #ff4d4d;
+    color: #f2f2f2;
+    padding: 0.75rem 2rem;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.site-choice a:hover {
+    background-color: #e63946;
+}
+
+/* Hover effect */
+.site-choice:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .site-choice {
+        width: 100%;
+    }
+}

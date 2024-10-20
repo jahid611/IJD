@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IJM Développement Web - Votre Partenaire Digital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Acceuil/styles.css">
+    
+    <!-- Leaflet CSS pour afficher OpenStreetMap -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        /* Ajoutez un style pour définir la taille de la carte */
+        #map {
+            height: 300px;  /* Vous pouvez ajuster la hauteur selon vos besoins */
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo-container">
+                <img src="/Images/logo.png" alt="IJM Logo" class="logo">
+                <p class="logo-text">IJM Développement Web</p>
+            </div>
+            <ul class="nav-links">
+                <li class="dropdown" id="dropdown-offres">
+                    <a href="#" class="dropdown-toggle">Nos offres <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../vitrine/site-vitrine.html">Site vitrine</a></li>
+                        <li><a href="../boutique/site-boutique.html">Site boutique</a></li>
+                        <li><a href="store-locator.html">Store locator</a></li>
+                    </ul>
+                </li>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#a-propos">À Propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="accueil" class="hero">
+            <div class="video-overlay">
+                <video autoplay loop muted playsinline class="background-video">
+                    <source src="/Images/siteweb.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la vidéo.
+                </video>
+            </div>
+            <div class="hero-content">
+                <h1>Créez votre présence en ligne avec IJM</h1>
+                <p>Des sites web professionnels et sur mesure pour votre entreprise</p>
+                <a href="/landing/landing-page.html" class="btn">Demandez un devis</a>
+            </div>
+            <div class="scroll-indicator">
+                <span class="mouse">
+                    <span class="mouse-wheel"></span>
+                </span>
+                <p>Scroll pour découvrir</p>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title">Nos Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-card-front">
+                            <i class="fas fa-laptop-code"></i>
+                            <h3>Création de Site Web</h3>
+                        </div>
+                        <div class="service-card-back">
+                            <p>Des sites web personnalisés et responsive pour tous vos besoins.</p>
+                            <a href="#" class="btn btn-primary">En savoir plus</a>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-card-front">
+                            <i class="fas fa-shopping-cart"></i>
+                            <h3>E-commerce</h3>
+                        </div>
+                        <div class="service-card-back">
+                            <p>Des boutiques en ligne performantes pour booster vos ventes.</p>
+                            <a href="#" class="btn btn-primary">En savoir plus</a>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-card-front">
+                            <i class="fas fa-sync-alt"></i>
+                            <h3>Refonte de Site</h3>
+                        </div>
+                        <div class="service-card-back">
+                            <p>Donnez un nouveau souffle à votre site web existant.</p>
+                            <a href="#" class="btn btn-primary">En savoir plus</a>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-card-front">
+                            <i class="fas fa-search"></i>
+                            <h3>SEO</h3>
+                        </div>
+                        <div class="service-card-back">
+                            <p>Optimisez votre visibilité sur les moteurs de recherche.</p>
+                            <a href="#" class="btn btn-primary">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Section Portfolio avec le carrousel vidéo -->
+        <section id="portfolio" class="portfolio-section">
+            <div class="container">
+                <h2 class="section-title">Notre Portfolio</h2>
+                <div class="carousel-container">
+                    <div class="carousel-item active">
+                        <div class="video-container">
+                            <video autoplay loop muted>
+                                <source src="/Images/slide1.mp4" type="video/mp4">
+                                Votre navigateur ne supporte pas la vidéo.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="video-container">
+                            <video autoplay loop muted>
+                                <source src="/Images/slide2.mp4" type="video/mp4">
+                                Votre navigateur ne supporte pas la vidéo.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        let currentIndex = 0;
+                        const items = document.querySelectorAll('.carousel-item');
+                        const itemCount = items.length;
+
+                        function showNextItem() {
+                            items[currentIndex].classList.remove('active');
+                            currentIndex = (currentIndex + 1) % itemCount;
+                            items[currentIndex].classList.add('active');
+                        }
+
+                        setInterval(showNextItem, 5000);
+                    });
+                </script>
+            </div>
+        </section>
+
+        <section id="a-propos" class="about-section">
+            <div class="container">
+                <h2 class="section-title">À Propos de IJM</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>IJM est une agence de création de sites web passionnée par l'innovation et le design. Notre équipe d'experts travaille sans relâche pour offrir des solutions web sur mesure qui répondent aux besoins uniques de chaque client.</p>
+                        <p>Avec des années d'expérience dans le domaine, nous sommes fiers de notre capacité à combiner créativité et technologie pour créer des sites web qui non seulement impressionnent visuellement, mais qui sont également performants et faciles à utiliser.</p>
+                        <a href="/IJMcast/us.html" class="btn-secondary">Rencontrez notre équipe</a>
+                    </div>
+                    <div class="about-image">
+                        <img src="/Images/logo.png" alt="L'équipe IJM au travail">
+                    </div>
+                </div>
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="150">22</span>
+                        <span class="stat-label">Projets réalisés</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="98">22</span>
+                        <span class="stat-label">Clients satisfaits</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="10">2</span>
+                        <span class="stat-label">Années d'expérience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="5">0</span>
+                        <span class="stat-label">Prix remportés</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="temoignages" class="testimonials-section">
+            <div class="container">
+                <h2 class="section-title">Ce que disent nos clients</h2>
+                <div class="testimonials-slider">
+                    <div class="testimonial-item">
+                        <p class="testimonial-text">"IJM a transformé notre ancien site web en une plateforme moderne et esthétique. Nous recevons de nombreux compliments de nos clients et partenaires. Le service a été rapide et efficace."</p>
+                        <div class="testimonial-author">
+                            <img src="/Images/logotrust1.png" alt="Client 1" class="testimonial-avatar">
+                            <div class="testimonial-info">
+                                <h4>Luca Rossi</h4>
+                                <p>Gérant, Design Italia</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <p class="testimonial-text">"Grâce à IJM, notre boutique en ligne a vu ses ventes augmenter de 130% en seulement 6 mois. Incroyable !"</p>
+                        <div class="testimonial-author">
+                            <img src="/Images/logotrust2.png" alt="Client 2" class="testimonial-avatar">
+                            <div class="testimonial-info">
+                                <h4>Amina Rahmani</h4>
+                                <p>Directrice Marketing, Oasis Green</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <button class="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="testimonial-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Contactez-nous</h2>
+                <div class="contact-content">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nom</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Sujet</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Choisissez un sujet</option>
+                                <option value="devis">Demande de devis</option>
+                                <option value="information">Demande d'information</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Envoyer</button>
+                    </form>
+                    <div class="contact-info">
+                        <h3>Informations de contact</h3>
+                        <p><i class="fas fa-envelope"></i> Email: contact@ijm-web.com</p>
+                        <p><i class="fas fa-phone"></i> Téléphone: +33 6 52 76 97 65</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Adresse: 5 Rue De Bel Air</p>
+                        <div id="map" class="contact-map"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <img src="/Images/logo.png" alt="IJM Logo" class="footer-logo">
+                    <p>IJM Développement Web</p>
+                </div>
+                <div class="footer-center">
+                    <!-- Menu déroulant uniquement, sans le titre doublé -->
+                    <div class="dropdown-footer">
+                        <button class="dropdown-btn-footer">Liens rapides ▼</button>
+                        <div class="dropdown-content-footer">
+                            <ul>
+                                <li><a href="#accueil">Accueil</a></li>
+                                <li><a href="#services">Services</a></li>
+                                <li><a href="#portfolio">Portfolio</a></li>
+                                <li><a href="#a-propos">À Propos</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-icons">
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 IJM Développement Web. Tous droits réservés.</p>
+                <ul class="footer-legal">
+                    <li><a href="../Mentionslgl/mentions-legales.html">Mentions légales</a></li>
+                    <li><a href="../Politique/politique-confidentialite.html">Politique de confidentialité</a></li>
+                    <li><a href="../conditionsUser/conditions-utilisation.html">Conditions d'utilisation</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+
+    <!-- Leaflet JS pour afficher OpenStreetMap -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <script>
+        // Initialisation de la carte avec OpenStreetMap et Leaflet
+        var map = L.map('map').setView([45.4397, 4.3872], 13);  // Coordonnées de Saint-Étienne
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        var marker = L.marker([45.4397, 4.3872]).addTo(map);
+        marker.bindPopup("<b>Saint-Étienne</b><br>C'est ici que nous sommes.").openPopup();
+    </script>
+
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("nLIaoMpfDZayULE4y");  // Remplacez par votre User ID de EmailJS
+        })();
+    </script>
+
+    <script src="/Acceuil/script.js"></script>
+</body>
+
+</html>

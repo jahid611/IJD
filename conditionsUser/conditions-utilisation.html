@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conditions d'Utilisation - IJM Web</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #fd5959;
@@ -16,47 +17,131 @@
             --font-size-medium: 1.25rem;
             --font-size-small: 1rem;
             --border-radius: 8px;
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            margin: 0;
-            padding: 0;
             font-family: var(--body-font);
             background-color: var(--background-color);
             color: var(--text-color);
             line-height: 1.6;
+            padding-top: 80px;
         }
-
-
-
-        h1 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-top: 2rem;
-}
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
-            margin-top: 150px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
         }
 
         h2 {
             font-size: var(--font-size-medium);
             color: var(--primary-color);
-            margin-bottom: 1rem;
+            margin: 2rem 0 1rem;
         }
 
         p, ul {
             font-size: var(--font-size-small);
-            margin-bottom: 7rem;
+            margin-bottom: 1rem;
         }
 
         ul {
             list-style: disc;
             padding-left: 1.5rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: var(--background-color);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: background-color var(--transition-speed);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            max-width: 50px;
+            border-radius: 15px;
+        }
+
+        .logo-text {
+            margin-left: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: color var(--transition-speed);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: all var(--transition-speed) ease-in-out;
+        }
+
+        .nav-links a:hover::after {
+            visibility: visible;
+            transform: scaleX(1);
+        }
+
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-color);
+            margin: 4px 0;
+            transition: 0.4s;
         }
 
         footer {
@@ -66,186 +151,168 @@
             color: var(--text-color);
             margin-top: 2rem;
             border-top: 2px solid var(--primary-color);
-            margin-top: -70px;
         }
         
         footer p {
             margin: 0.5rem 0;
         }
 
-        nav {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    margin-top: -55px;
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
 
-}
+            nav {
+                padding: 0.5rem 1rem;
+            }
 
-nav a {
-    color: #f2f2f250;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-    margin: 1 1rem;
-}
+            .logo {
+                max-width: 40px;
+            }
 
-    .nav-links {
-    display: flex;
-    flex-direction: column; /* Les liens seront affichés les uns en dessous des autres */
-    gap: 0.5rem;
-}
+            .logo-text {
+                font-size: 1rem;
+            }
 
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--background-color);
+                padding: 1rem;
+                text-align: center;
+                box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+            }
 
-nav a:hover {
-    color: var(--primary-color);
-}
+            .nav-links.active {
+                display: flex;
+            }
 
+            .nav-links li {
+                margin: 1rem 0;
+            }
 
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
-    padding: 1rem 0;
-}
+            .hamburger-menu {
+                display: flex;
+            }
 
-.header.scrolled {
-    background-color: rgba(0, 0, 0, 0.9);
-    padding: 0.5rem 0;
-}
+            h1 {
+                font-size: 2rem;
+            }
 
-.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
-}
+            h2 {
+                font-size: 1.2rem;
+            }
 
-.logo-container {
-    display: flex;
-    align-items: center;
-}
+            p, ul {
+                font-size: 0.9rem;
+            }
 
-.logo {
-    width: 50px;
-    height: auto;
-    border-radius: 8px;
-    transition: transform var(--transition-speed);
-    border-radius: 15px;
-    
-}
+            .container {
+                padding: 1rem;
+            }
+        }
 
-.logo:hover {
-    transform: scale(1.1);
-}
+        .hamburger-menu.active .bar:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
 
-.logo-text {
-    margin-left: 1rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-    opacity: 1;
-    transition: opacity var(--transition-speed);
-}
+        .hamburger-menu.active .bar:nth-child(2) {
+            opacity: 0;
+        }
 
-.header.scrolled .logo-text {
-    opacity: 0;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    
-}
-
-.nav-links li {
-    margin-left: 2rem;
-    position: relative;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 600;
-    transition: color var(--transition-speed);
-    font-size: 0.875rem;
-    position: relative;
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: var(--primary-color);
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all var(--transition-speed) ease-in-out;
-}
-
-.nav-links a:hover::after {
-    visibility: visible;
-    transform: scaleX(1);
-}
-
-.logo {
-    max-width: 50px;
-    margin-right: 2rem;
-}
-
+        .hamburger-menu.active .bar:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
     </style>
 </head>
 <body>
-
-    <header class="header">
-        <nav class="nav">
+    <header>
+        <nav>
             <div class="logo-container">
                 <img src="/Images/logo.png" alt="IJM Logo" class="logo">
                 <p class="logo-text">IJM Développement Web</p>
-                
             </div>
             <ul class="nav-links">
-                 </ul>
-                </li>
                 <li><a href="/Acceuil/index.html">Accueil</a></li>
-                <li><a href="/Mentionslgl/mentions-legales.html">Mentions legales</a></li>
+                <li><a href="/Mentionslgl/mentions-legales.html">Mentions légales</a></li>
                 <li><a href="/Politique/politique-confidentialite.html">Politique de Confidentialité</a></li>
-                
-         
-                
             </ul>
-            
+            <div class="hamburger-menu" id="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
         </nav>
     </header>
 
-<div class="container">
-    <h2>Acceptation des Conditions</h2>
-    <p>
-        En accédant et en utilisant ce site, vous acceptez les présentes conditions d'utilisation.
-    </p>
+    <div class="container">
+        <h1>Conditions d'Utilisation</h1>
 
-    <h2>Utilisation du site</h2>
-    <p>
-        Vous acceptez d'utiliser ce site uniquement à des fins légales. Vous vous engagez à ne pas utiliser le site de manière qui pourrait causer un dommage à IJM Développement Web.
-    </p>
+        <h2>Acceptation des Conditions</h2>
+        <p>
+            En accédant et en utilisant ce site, vous acceptez les présentes conditions d'utilisation.
+        </p>
 
-    <h2>Propriété intellectuelle</h2>
-    <p>
-        Tout le contenu du site (textes, images, logos) est la propriété de IJM Développement Web et est protégé par les lois relatives à la propriété intellectuelle.
-    </p>
+        <h2>Utilisation du site</h2>
+        <p>
+            Vous acceptez d'utiliser ce site uniquement à des fins légales. Vous vous engagez à ne pas utiliser le site de manière qui pourrait causer un dommage à IJM Développement Web.
+        </p>
 
-    <h2>Limitation de responsabilité</h2>
-    <p>
-        IJM Développement Web ne peut être tenu responsable de l'utilisation de ce site ou de tout dommage direct ou indirect découlant de l'utilisation du site.
-    </p>
-</div>
+        <h2>Propriété intellectuelle</h2>
+        <p>
+            Tout le contenu du site (textes, images, logos) est la propriété de IJM Développement Web et est protégé par les lois relatives à la propriété intellectuelle.
+        </p>
 
-<footer>
-    <p>&copy; 2023 IJM Développement Web. Tous droits réservés.</p>
-</footer>
+        <h2>Limitation de responsabilité</h2>
+        <p>
+            IJM Développement Web ne peut être tenu responsable de l'utilisation de ce site ou de tout dommage direct ou indirect découlant de l'utilisation du site.
+        </p>
+    </div>
 
+    <footer>
+        <p>&copy; 2023 IJM Développement Web. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('nav')) {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 0) {
+                nav.style.boxShadow = '0 2px 5px rgba(0, 0, 0, 0.1)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
 </body>
 </html>

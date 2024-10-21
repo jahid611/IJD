@@ -53,7 +53,6 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
-            
         }
 
         h1 {
@@ -88,6 +87,7 @@
             object-fit: cover;
             margin-bottom: 1rem;
             border: 3px solid var(--primary-color);
+            transition: transform var(--transition-speed);
         }
 
         .member-name {
@@ -115,6 +115,49 @@
         .social-links a:hover {
             color: var(--primary-color);
         }
+
+        /* Hover effects for cards */
+        .team-member:hover .member-photo {
+            transform: scale(1.15);
+        }
+
+        .team-grid:hover .team-member:not(:hover) {
+            transform: scale(0.9);
+        }
+
+        .team-grid:hover .team-member:not(:hover) .member-photo {
+            filter: brightness(0.5) saturate(0) contrast(1.2) blur(5px);
+        }
+
+        /* Media Queries for Mobile */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem; /* Font size reduced */
+            }
+
+            .team-member {
+                padding: 1.5rem; /* Less padding on mobile */
+            }
+
+            .member-photo {
+                width: 150px; /* Smaller photo on mobile */
+                height: 150px;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr; /* Single column layout */
+                gap: 1rem; /* Less gap between team members */
+            }
+
+            .back-arrow {
+                font-size: 2rem; /* Smaller back arrow */
+                padding: 8px 12px;
+            }
+        }
     </style>
 </head>
 <body style="background-image: url('/Images/reu.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;">
@@ -128,10 +171,10 @@
         <h1>Notre équipe</h1>
         <div class="team-grid">
             <div class="team-member">
-                <img src="/placeholder.svg?height=200&width=200" alt="Photo de Marie Dupont" class="member-photo">
+                <img src="/placeholder.svg?height=200&width=200" alt="Photo de Djibril Gharbi" class="member-photo">
                 <h2 class="member-name">Djibril Gharbi</h2>
-                <p class="member-role">Developper</p>
-                <p class="member-description">Marie est passionnée par le développement web et possède une expertise en React et Node.js. Elle aime relever des défis techniques et créer des applications web performantes.</p>
+                <p class="member-role">Developpeur</p>
+                <p class="member-description">Djibril est passionné par le développement web et possède une expertise en React et Node.js.</p>
                 <div class="social-links">
                     <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
                     <a href="#" target="_blank"><i class="fab fa-github"></i></a>
@@ -140,10 +183,10 @@
             </div>
 
             <div class="team-member">
-                <img src="/placeholder.svg?height=200&width=200" alt="Photo de Thomas Martin" class="member-photo">
+                <img src="/placeholder.svg?height=200&width=200" alt="Photo de Ilian Guemra" class="member-photo">
                 <h2 class="member-name">Ilian Guemra</h2>
                 <p class="member-role">ECO gestion</p>
-                <p class="member-description">Ilian est un designer talentueux qui crée des interfaces utilisateur intuitives et esthétiques. Il a un œil pour les détails et une passion pour l'expérience utilisateur.</p>
+                <p class="member-description">Ilian est un designer talentueux qui crée des interfaces utilisateur intuitives et esthétiques.</p>
                 <div class="social-links">
                     <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
                     <a href="#" target="_blank"><i class="fab fa-behance"></i></a>
@@ -155,7 +198,7 @@
                 <img src="/Images/jahid.jpg" alt="Photo de Jahid Sayad" class="member-photo">
                 <h2 class="member-name">Jahid Sayad</h2>
                 <p class="member-role">Chef de projet</p>
-                <p class="member-description">Jahid centré dans la gestion de projets web complexes. Il assure une communication fluide entre l'équipe et les clients, garantissant la réussite de chaque projet.</p>
+                <p class="member-description">Jahid est centré dans la gestion de projets web complexes et assure une communication fluide avec les clients.</p>
                 <div class="social-links">
                     <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
                     <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>

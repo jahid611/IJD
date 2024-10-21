@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Mettre à jour le texte dans la modale
             document.getElementById('modalTitle').textContent = `Plan sélectionné : ${selectedPlan}`;
+            
             document.getElementById('modalText').textContent = `Le prix de base est : ${selectedPrice}. Veuillez remplir le formulaire pour un devis personnalisé.`;
 
             // Afficher la modale
@@ -73,11 +74,17 @@ document.addEventListener('DOMContentLoaded', function () {
     // Gestion de la fermeture de la modale lorsque le bouton "OK" est cliqué
     closeModalButton.addEventListener('click', function () {
         modal.style.display = 'none';
-        // Redirection vers la page d'accueil uniquement si le plan sélectionné est "Expert"
+        
+        // Redirection selon le plan sélectionné
         if (selectedPlan === 'Expert') {
+            // Redirection vers la section contact de la page d'accueil pour le plan "Expert"
             window.location.href = "/Acceuil/index.html#contact";
+        } else if (selectedPlan === 'Essentiel' || selectedPlan === 'Professionnel') {
+            // Redirection vers la section contact de la page vitrine pour les plans "Essentiel" et "Professionnel"
+            window.location.href = "/vitrine/site-vitrine.html#contact";
         }
     });
+    
 
     // Gestion de la soumission du formulaire pour générer le PDF
     form.addEventListener('submit', function (e) {
@@ -242,6 +249,10 @@ if (navToggle) {
   });
 }
 
+
+
+
+
 // Fermer le menu
 if (navClose) {
   navClose.addEventListener('click', () => {
@@ -249,4 +260,46 @@ if (navClose) {
       navMenu.classList.remove('show-menu');
     }
   });
+
+  const navMenu = document.getElementById('nav-menu'),
+      navToggle = document.getElementById('nav-toggle'),
+      navClose = document.getElementById('nav-close');
+
+/*===== MENU SHOW =====*/
+if (navToggle) {
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.add('show-menu');
+    });
+}
+
+/*===== MENU HIDDEN =====*/
+const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('show-menu');
+    });
+});
+
+function openModal() {
+    const modal = document.getElementById('pricingModal');
+    modal.style.display = 'flex'; // Utilisez flex pour que le modal soit centré
+}
+
+/*===== CLOSE MODAL BUTTON =====*/
+document.getElementById('closeModalButton').addEventListener('click', function () {
+    document.getElementById('pricingModal').style.display = 'none';
+
+    window.addEventListener('click', function(event) {
+        const modal = document.getElementById('pricingModal');
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+
+
+});
+
+
+
 }

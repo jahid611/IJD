@@ -39,7 +39,7 @@ window.addEventListener('scroll', scrollHeader)
 
 /*==================== PRICING MODAL BEHAVIOR ====================*/
 const closeBtn = document.querySelector('.close-btn');
-const modalButton = document.querySelector('.pricing-modal-button');
+const modalButton = document.querySelector('.pricing-modal-button'); // Bouton OK
 const modal = document.getElementById('pricingModal');
 
 // Fermer la modale
@@ -49,6 +49,9 @@ closeBtn.addEventListener('click', () => {
 
 modalButton.addEventListener('click', () => {
     modal.style.display = 'none';
+    
+    // Redirection vers une section spécifique de votre site après avoir fermé la modale
+    window.location.href = '/boutique/site-boutique.html#contact'; // Remplacez par l'URL ou la section cible
 });
 
 // Fermer la modale si l'utilisateur clique en dehors du contenu de la modale
@@ -57,6 +60,7 @@ window.addEventListener('click', (event) => {
         modal.style.display = 'none';
     }
 });
+
 
 document.addEventListener('DOMContentLoaded', function () {
     // Variables pour le plan et le prix sélectionné

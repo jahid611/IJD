@@ -9,7 +9,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 header {
@@ -18,43 +18,48 @@ header {
 }
 
 .title {
-    font-size: 2.5rem;
+    font-size: 2rem; /* Slightly reduced font size for mobile */
     color: #ff4d4d; /* Rouge IJM */
+    margin-bottom: 1rem;
 }
 
 /* Main Container */
 .main-container {
     display: flex;
+    flex-direction: column; /* Stacks elements vertically on small screens */
     justify-content: center;
-    gap: 2rem;
-    width: 80%;
+    align-items: center;
+    width: 90%; /* Ensures the layout fits within the screen width */
+    max-width: 500px; /* Limits width for larger screens */
+    margin: 0 auto;
 }
 
 .site-choice {
     background-color: #333333;
-    padding: 2rem;
+    padding: 1.5rem; /* Adjust padding for better mobile spacing */
     border-radius: 10px;
     text-align: center;
-    width: 40%;
+    width: 100%; /* Full width on mobile */
+    margin-bottom: 1.5rem; /* Space between the cards */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .site-choice h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
+    font-size: 1.5rem; /* Reduced font size for better mobile view */
+    margin-bottom: 0.75rem;
     color: #ff4d4d; /* Rouge IJM */
 }
 
 .site-choice p {
     font-size: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem; /* Reduced margin */
 }
 
 .site-choice a {
     background-color: #ff4d4d;
     color: #f2f2f2;
-    padding: 0.75rem 2rem;
+    padding: 0.75rem 1.5rem;
     border-radius: 5px;
     font-weight: 600;
     text-decoration: none;
@@ -67,17 +72,29 @@ header {
 
 /* Hover effect */
 .site-choice:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px); /* Adjust hover for smoother movement */
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .main-container {
-        flex-direction: column;
+    .title {
+        font-size: 1.8rem; /* Adjust title size on smaller screens */
     }
 
     .site-choice {
-        width: 100%;
+        padding: 1.25rem; /* Smaller padding for more content space */
+    }
+
+    .site-choice h2 {
+        font-size: 1.25rem; /* Make headings smaller on mobile */
+    }
+
+    .site-choice p {
+        font-size: 0.875rem; /* Make text smaller for compact view */
+    }
+
+    .site-choice a {
+        padding: 0.5rem 1.25rem; /* Reduce button padding for better fit */
     }
 }

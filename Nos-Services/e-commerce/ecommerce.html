@@ -76,6 +76,10 @@
             color: var(--secondary-color);
         }
 
+        h1, h2, h3, h4, p, a, li, button {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
@@ -190,6 +194,69 @@
             padding: 20px 0;
             margin-top: 60px;
         }
+
+        /* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr; /* One column layout for small screens */
+    }
+
+    .platform-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .platform img {
+        width: 80px;
+        height: 80px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .cta-button {
+        width: 80%; /* Make button fill more space on mobile */
+    }
+    @media (max-width: 768px) {
+    .nav-links {
+        justify-content: space-evenly;
+        flex-wrap: wrap; /* Allows wrapping if space is limited */
+    }
+
+    .nav-links li {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .logo-text {
+        font-size: 0.8rem;
+    }
+
+    .logo {
+        width: 40px;
+    }
+}
+}
+
     </style>
 </head>
 <body>
@@ -267,7 +334,7 @@
         <section class="cta">
             <div class="container">
                 <h2>Prêt à lancer votre boutique en ligne ?</h2>
-                <a href="#contact" class="cta-button">Contactez-nous</a>
+                <a href="/Acceuil/index.html#contact" class="cta-button">Contactez-nous</a>
             </div>
         </section>
     </main>

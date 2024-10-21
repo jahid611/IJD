@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="/vitrine/site-vitrine.css">
 </head>
 <body>
-
     <div id="pricingModal" class="modal">
         <div class="modal-content">
             <h2 id="modalTitle">Plan sélectionné</h2>
@@ -18,13 +17,16 @@
         </div>
     </div>
 
-    
-
     <header class="header" id="header">
         <nav class="nav container">
             <div class="logo-container">
                 <img src="/Images/logo.png"  alt="IJM Logo" class="logo">
                 <h1 class="logo-text">IJM Développement Web</h1>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
             <ul class="nav-links" id="nav-menu">
                 <li><a href="/Acceuil/index.html" class="nav-link">Accueil</a></li>
@@ -34,12 +36,11 @@
                 <li><a href="/Acceuil/index.html#contact" class="nav-link">Contact</a></li>
                 <li><a href="/boutique/site-boutique.html" class="nav-link">Site Boutique</a></li>
             </ul>
-
         </nav>
     </header>
 
     <main class="main">
-        <section class="home section" id="home">
+        <section class="home section"   id="home">
             <div class="home__container container">
                 <div class="home__content">
                     <h2 class="home__title">Site vitrine Avancé</h2>
@@ -99,7 +100,6 @@
                     <div class="pricing__price">
                         1000
                         <span class="pricing__currency">€</span>
-                        
                         <span class="pricing__period"></span>
                     </div>
                     <ul class="pricing__features">
@@ -116,7 +116,6 @@
                     <div class="pricing__price">
                         2500
                         <span class="pricing__currency">€</span>
-                        
                         <span class="pricing__period"></span>
                     </div>
                     <ul class="pricing__features">
@@ -126,14 +125,13 @@
                         <li><i class="fas fa-check"></i> Analyse des ventes</li>
                         <li><i class="fas fa-check"></i> Support technique 3 mois</li>
                     </ul>
-                    <button class="pricing__button" data-plan="Essentiel" data-price="2500">Choisir ce plan</button>
+                    <button class="pricing__button" data-plan="Professionnel" data-price="2500">Choisir ce plan</button>
                 </div>
                 <div class="pricing__content">
                     <h3 class="pricing__title">Expert</h3>
                     <div class="pricing__price">
                         Sur Mesure
                         <span class="pricing__currency"></span>
-                        
                     </div>
                     <ul class="pricing__features">
                         <li><i class="fas fa-check"></i> Pages illimitées</li>
@@ -168,7 +166,6 @@
                         <label for="message" class="contact__label">Message</label>
                         <textarea id="message" name="message" cols="0" rows="7" class="contact__input" required></textarea>
                     </div>
-                    <!-- Ajoutez le champ caché ici -->
                     <input type="hidden" id="selected-plan" name="selected-plan" value="">
                     <div>
                         <button type="submit" class="button button--flex">
@@ -197,10 +194,8 @@
             <div class="footer__content">
                 <h3 class="footer__title">Contactez-nous</h3>
                 <ul class="footer__links">
-                    <li><a href="mailto:contact@ijmweb.com" class="footer__link">contact@ijmweb.com</a></li>
+                    <li><a href="mailto:contact@ijmweb.com" class="no-underline" class="footer__link">contact@ijmweb.com</a></li>
                     <li><a href="tel:+33612345678" class="footer__link">+33 6 12 34 56 78</a></li>
-                    <!-- Bouton Contactez-nous -->
-                    
                 </ul>
             </div>
             <div class="footer__content">
@@ -213,18 +208,11 @@
             </div>
         </div>
         <p class="footer__copy">&copy; 2023 IJM Web. Tous droits réservés</p>
+ 
+
     </footer>
 
-    <div id="pricingModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2 id="modalTitle">Plan sélectionné</h2>
-            <p id="modalText">Description du plan ici.</p>
-            <button id="close-modal">OK</button>
-        </div>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
     <script src="/vitrine/site-vitrine.js"></script>
 </body>

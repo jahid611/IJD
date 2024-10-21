@@ -29,13 +29,7 @@ body {
     color: #f2f2f2;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  .header {
+.header {
     position: fixed;
     top: 0;
     left: 0;
@@ -68,7 +62,6 @@ body {
     border-radius: 8px;
     transition: transform var(--transition-speed);
     border-radius: 15px;
-    
 }
 
 .logo:hover {
@@ -181,18 +174,16 @@ body {
     transform: rotate(180deg);
 }
 
-
-
-.footer__link{
-color: #ff4d4d;
+.footer__link {
+    color:#f1444d;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.footer__link:hover{
-color: red;
-
+.footer__link:hover {
+    color: var(--primary-color);
 }
 
-/* Styles par défaut pour la modale */
 .modal-content {
     background-color: #837171;
     color: #fff;
@@ -200,8 +191,6 @@ color: red;
     border-radius: 5px;
     text-align: center;
 }
-
-
 
 .close-btn {
     position: absolute;
@@ -217,23 +206,19 @@ color: red;
 }
 
 .pricing-modal-button {
-    background-color: #f1444d;  /* Une couleur rouge pour attirer l'attention */
-    color: #fff;  /* Couleur du texte blanche */
-    border: none;  /* Enlever les bordures par défaut */
-    padding: 10px 20px;  /* Ajoutez du padding pour agrandir le bouton */
-    font-size: 16px;  /* Taille de police */
-    cursor: pointer;  /* Change le curseur au survol */
-    border-radius: 5px;  /* Bordures arrondies */
-    transition: background-color 0.3s ease;  /* Transition douce lors du survol */
+    background-color: #f1444d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .pricing-modal-button:hover {
-    background-color: #ff3b3b;  /* Change la couleur lors du survol */
+    background-color: #ff3b3b;
 }
-
-
-
-
 
 .bar {
     width: 25px;
@@ -243,7 +228,6 @@ color: red;
     transition: 0.4s;
 }
 
-/* Section layout */
 .section {
     padding: 4rem 0;
     background-color: var(--secondary-color);
@@ -260,7 +244,6 @@ color: red;
     margin-left: -1rem;
 }
 
-/* Button style */
 .button {
     display: inline-block;
     padding: 0.75rem 2rem;
@@ -278,7 +261,6 @@ color: red;
     background-color: #e63946;
 }
 
-/* Home Section */
 .home {
     display: flex;
     justify-content: space-between;
@@ -352,11 +334,9 @@ color: red;
 .home__img {
     flex: 2;
     max-width: 50%;
-    text-align: right; /* Aligner l'image à droite */
-
+    text-align: right;
 }
 
-/* Features Section */
 .features {
     background-color: var(--secondary-color);
     text-align: center;
@@ -387,7 +367,6 @@ color: red;
     font-size: var(--font-size-medium);
 }
 
-/* Footer */
 .footer {
     background-color: var(--secondary-color);
     color: var(--text-color);
@@ -425,7 +404,6 @@ color: red;
     color: var(--primary-color);
 }
 
-/* Tarifs Section */
 .pricing {
     background-color: var(--secondary-color);
     padding: 4rem 2rem;
@@ -524,94 +502,12 @@ color: red;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.nav__list li {
-    display: inline;
-  }
-
-  .nav__list a {
-    color: #f2f2f2;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: 0.1rem;
-  }
-
-  .hamburger-menu {
+.hamburger-menu {
     display: none;
     flex-direction: column;
     cursor: pointer;
-  }
-  
- 
-  .bar {
-    height: 3px;
-    width: 25px;
-    background-color: #f2f2f2;
-    margin: 4px;
-    transition: all 0.3s ease;
-  }
-
-@media (min-width: 768px) {
-    .nav__menu {
-        display: none;
-        flex-direction: row;
-        align-items: center;
-        position: static;
-        box-shadow: none;
-        padding: 0;
-    }
-
-    .nav__list a {
-        font-size: 1.5rem;
-      }
-
-      .nav__list {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .header__nav {
-        display: none;
-      }
-
-      .hamburger-menu {
-        display: flex;
-      }
-
-      .header__nav.active {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #333;
-        padding: 1rem;
-        width: 100%;
-      }
-    
-
-    .nav__toggle {
-        display: none;
-    }
-
-    .home {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 6rem 2rem;
-    }
-
-    .home__content {
-        flex: 1;
-        max-width: 50%;
-        margin-top: 45px;
-    }
-
-    .home__img {
-        max-width: 40%;
-    }
 }
 
-/* Section Contact */
 .contact {
     display: flex;
     justify-content: center;
@@ -638,7 +534,7 @@ color: red;
 .contact__form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap:  1.5rem;
 }
 
 .contact__content {
@@ -690,46 +586,23 @@ textarea.contact__input {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Alignement des champs */
 .contact__inputs {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-@media (min-width: 768px) {
-    .contact__inputs {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .contact__content {
-        width: 48%;
-    }
-
-    .contact__form {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .contact__button {
-        width: 100%;
-        text-align: center;
-    }
-}
-
 .header__nav {
     display: flex;
     align-items: center;
-  }
+}
 
-  .header__logo img {
+.header__logo img {
     width: 120px;
-  }
+}
 
-   /* Styles pour la modale */
-   .modal {
-    display: none; /* Cacher la fenêtre modale par défaut */
+.modal {
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -742,13 +615,15 @@ textarea.contact__input {
 }
 
 .modal-content {
-    background-color: rgb(0, 0, 0);
+    background-color: #1a1a1a;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 400px;
-    margin: auto;
+    width: 90%; /* Limite la taille de la modale à 90% de la largeur de l'écran */
+    margin: 0 auto;
+    position: relative;
 }
 
 .close-btn {
@@ -772,3 +647,260 @@ textarea.contact__input {
     background-color: #e63946;
 }
 
+@media (min-width: 768px) {
+    .nav__menu {
+        display: none;
+        flex-direction: row;
+        align-items: center;
+        position: static;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .header__nav {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .header__nav.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .home {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 6rem 2rem;
+    }
+
+    .home__content {
+        flex: 1;
+        max-width: 50%;
+        margin-top: 45px;
+    }
+
+    .home__img {
+        max-width: 40%;
+    }
+
+    .contact__inputs {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .contact__content {
+        width: 48%;
+    }
+
+    .contact__form {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .contact__button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (min-width: 1024px) {
+    .home__title {
+        font-size: 3.5rem;
+    }
+
+    .home__subtitle {
+        font-size: 1.5rem;
+    }
+}
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+    .header {
+        padding: 0.5rem 0;
+    }
+
+    .nav {
+        padding: 0 1rem;
+    }
+
+    .logo {
+        width: 40px;
+    }
+
+    .logo-text {
+        font-size: 0.8rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .home {
+        flex-direction: column;
+        padding: 2rem 1rem;
+    }
+
+    .home__content {
+        text-align: center;
+    }
+
+    .home__title {
+        font-size: 2rem;
+    }
+
+    .home__subtitle {
+        font-size: 1.2rem;
+    }
+
+    .home__description {
+        font-size: 1rem;
+    }
+
+    .home__img {
+        margin-top: 2rem;
+        max-width: 100%;
+    }
+
+    .features__container {
+        flex-direction: column;
+    }
+
+    .features__content {
+        width: 100%;
+    }
+
+    .pricing__container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing__content {
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .contact__container {
+        margin-left: 0;
+        padding: 1rem;
+    }
+}
+
+/* Additional styles for better user experience */
+.nav-links a:focus,
+.button:focus,
+.pricing__button:focus,
+.contact__input:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.pricing__content-best {
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing__badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    transform: rotate(45deg) translateX(25%) translateY(-50%);
+}
+
+.features__content:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+.contact__form {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Accessibility improvements */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Print styles for better PDF generation */
+@media print {
+    body {
+        background-color: white;
+        color: black;
+    }
+
+    .header, .footer, .features, .pricing {
+        display: none;
+    }
+
+    .home, .contact {
+        padding: 0;
+    }
+
+    .contact__form {
+        display: block;
+    }
+
+    @media (max-width: 768px) {
+        .modal-content {
+            max-width: 90%; /* La modale prendra 90% de l'espace sur les petits écrans */
+            padding: 20px;
+        }
+    }
+    
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    
+    #close-modal {
+        background-color: #ff4d4d;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+    
+    #close-modal:hover, .close-btn:hover {
+        background-color: #e63946;
+    }
+    
+}

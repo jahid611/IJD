@@ -236,35 +236,39 @@ body, html {
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
     animation: fadeInUp 1s ease-out;
-    color: rgb(160, 0, 0);
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Ajoute une ombre pour rendre le texte plus lisible */
 }
 
 .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
     animation: fadeInUp 1s ease-out 0.5s both;
     color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Ajoute une ombre pour plus de lisibilité */
 }
 
 .btn {
     display: inline-block;
-    padding: 0.625rem 1.25rem;
+    padding: 0.8rem 1.5rem;
     background-color: #ff0000;
-    color: white;
-    border-radius: 1.5625rem;
+    color: #ffffff;
+    border-radius: 2rem;
     text-transform: uppercase;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Ajoute une ombre pour plus de profondeur */
 }
 
 .btn:hover {
     background-color: #000000;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6); /* Accentue l'ombre au survol */
 }
 
 .scroll-indicator {

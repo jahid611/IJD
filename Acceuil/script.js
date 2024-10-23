@@ -347,5 +347,13 @@ contactForm.addEventListener('submit', function(e) {
             console.log('Carrousel arrêté');
         };
     });
+
+    AOS.init({
+        duration: 1200, // Durée de l'animation
+        once: true, // Animation uniquement à la première apparition
+    });
+
+    
+    
     
 });

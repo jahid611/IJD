@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --primary-color: #000000;
-            --background-color: #000000;
+            --primary-color: #ffffff; /* Couleur primaire modifiée pour plus de contraste */
+            --background-color: #1b1b1b; /* Arrière-plan foncé élégant */
             --text-color: #f5f5f7;
-            --transition-speed: 0.3s;
+            --transition-speed: 0.4s; /* Transitions plus douces */
         }
 
         * {
@@ -38,67 +38,92 @@
             padding: 10px 15px;
             border-radius: 50%;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s, transform 0.3s;
+            transition: background-color var(--transition-speed), transform var(--transition-speed);
             z-index: 1000;
             cursor: pointer;
         }
 
         .back-arrow:hover {
             background-color: var(--primary-color);
-            color: var(--text-color);
+            color: black;
             transform: translateY(-50%) scale(1.1);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 3rem;
+            text-align: center;
         }
 
         h1 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: rgb(255, 255, 255);
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
 
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            justify-content: center;
         }
 
+        /* Carte membre d'équipe */
         .team-member {
             background-color: rgb(41, 41, 41);
-            border-radius: 35px;
+            border-radius: 20px;
             padding: 2rem;
             text-align: center;
-            transition: transform var(--transition-speed);
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
         }
 
         .team-member:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
         }
 
+        /* Photo membre */
         .member-photo {
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 1rem;
-            border: 3px solid var(--primary-color);
-            transition: transform var(--transition-speed);
+            margin-bottom: 1.5rem;
+            border: 5px solid rgba(255, 255, 255, 0.8);
+            box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.3), 0 8px 15px rgba(0, 0, 0, 0.3);
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
         }
 
+        .team-member:hover .member-photo {
+            transform: scale(1.1);
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.6), 0 12px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Nom du membre */
         .member-name {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: bold;
             margin-bottom: 0.5rem;
         }
 
         .member-role {
+            font-size: 1.2rem;
             color: var(--primary-color);
             font-weight: bold;
             margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .member-description {
+            font-size: 1rem;
+            color: #ccc;
+            margin-bottom: 1.5rem;
         }
 
         .social-links {
@@ -116,45 +141,37 @@
             color: var(--primary-color);
         }
 
-        /* Hover effects for cards */
-        .team-member:hover .member-photo {
-            transform: scale(1.15);
-        }
-
+        /* Effet de survol sur les autres cartes */
         .team-grid:hover .team-member:not(:hover) {
-            transform: scale(0.9);
+            transform: scale(0.95);
         }
 
         .team-grid:hover .team-member:not(:hover) .member-photo {
-            filter: brightness(0.5) saturate(0) contrast(1.2) blur(5px);
+            filter: grayscale(100%) brightness(0.5) saturate(0.8) contrast(1.2);
         }
 
         /* Media Queries for Mobile */
         @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-
             h1 {
-                font-size: 2rem; /* Font size reduced */
+                font-size: 2rem; /* Réduction de la taille de la police */
             }
 
             .team-member {
-                padding: 1.5rem; /* Less padding on mobile */
+                padding: 1.5rem;
             }
 
             .member-photo {
-                width: 150px; /* Smaller photo on mobile */
+                width: 150px;
                 height: 150px;
             }
 
             .team-grid {
-                grid-template-columns: 1fr; /* Single column layout */
-                gap: 1rem; /* Less gap between team members */
+                grid-template-columns: 1fr; /* Mise en page en une seule colonne */
+                gap: 1.5rem;
             }
 
             .back-arrow {
-                font-size: 2rem; /* Smaller back arrow */
+                font-size: 2rem;
                 padding: 8px 12px;
             }
         }
@@ -170,10 +187,11 @@
     <div class="container">
         <h1>Notre équipe</h1>
         <div class="team-grid">
+            <!-- Team member 1 -->
             <div class="team-member">
                 <img src="/placeholder.svg?height=200&width=200" alt="Photo de Djibril Gharbi" class="member-photo">
                 <h2 class="member-name">Djibril Gharbi</h2>
-                <p class="member-role">Developpeur</p>
+                <p class="member-role">Développeur</p>
                 <p class="member-description">Djibril est passionné par le développement web et possède une expertise en React et Node.js.</p>
                 <div class="social-links">
                     <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -182,6 +200,7 @@
                 </div>
             </div>
 
+            <!-- Team member 2 -->
             <div class="team-member">
                 <img src="/placeholder.svg?height=200&width=200" alt="Photo de Ilian Guemra" class="member-photo">
                 <h2 class="member-name">Ilian Guemra</h2>
@@ -194,6 +213,7 @@
                 </div>
             </div>
 
+            <!-- Team member 3 -->
             <div class="team-member">
                 <img src="/Images/jahid.jpg" alt="Photo de Jahid Sayad" class="member-photo">
                 <h2 class="member-name">Jahid Sayad</h2>

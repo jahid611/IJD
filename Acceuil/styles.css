@@ -989,3 +989,45 @@ footer {
 .dropdown-footer:hover .dropdown-content-footer {
     display: block;
 }
+
+/* Section Features Styles */
+.features-section {
+    padding: 5rem 0;
+    background-color: #000000; /* Arrière-plan clair pour contraster avec le reste du site */
+    color: #ffffff; /* Couleur de texte sombre pour une bonne lisibilité */
+    text-align: center;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); /* Ajustement de la grille pour un bon alignement */
+    gap: 3rem; /* Espacement plus important entre les icônes */
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0; /* Suppression du padding des cartes */
+    background-color: transparent; /* Fond transparent pour un design minimaliste */
+    border-radius: 0;
+    box-shadow: none; /* Pas d'ombre autour des éléments */
+    transition: none;
+}
+
+.feature-item i {
+    font-size: 3rem; /* Icônes plus grandes pour attirer l'attention */
+    color: #d5001c; /* Couleur des icônes */
+    margin-top: 5rem;
+}
+
+.feature-item h3 {
+    font-size: 1.5rem; /* Taille du texte ajustée */
+    color: #ffffff; /* Couleur du texte harmonisée avec le thème */
+    font-weight: 600; /* Texte en gras pour plus d'impact */
+    margin-top: 0.5rem;
+}
+

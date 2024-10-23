@@ -352,6 +352,7 @@ contactForm.addEventListener('submit', function(e) {
         duration: 1200, // Durée de l'animation
         once: true, // Animation uniquement à la première apparition
     });
+    
 
     
     

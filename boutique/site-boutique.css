@@ -200,9 +200,9 @@ body {
 .section__title {
     text-align: center;
     font-size: var(--font-size-large);
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     color: var(--text-color);
-    margin-left: 1rem;
+    margin-left: 0.1rem;
 }
 
 /* Button style */

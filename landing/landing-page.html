@@ -3,28 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choix de votre site web - IJDev</title>
+    <title>Choisissez votre site web - IJDev</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/landing/landing-page.css">
 </head>
 <body>
     <header class="header">
-        <h1 class="title">Choisissez le type de site web</h1>
+        <nav class="navbar">
+            <div class="logo">IJDev</div>
+            <ul class="nav-links">
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <h1 class="title">Choisissez le type de site web idéal pour votre projet</h1>
     </header>
     
     <main class="main-container">
         <div class="site-choice" id="site-vitrine">
+            <div class="icon-container">
+                <i class="fas fa-store-alt"></i>
+            </div>
             <h2>Site Vitrine</h2>
-            <p>Découvrez notre offre pour un site vitrine personnalisé.</p>
+            <p>Présentez votre entreprise avec élégance et professionnalisme. Notre offre de site vitrine personnalisé met en valeur vos services et votre identité de marque.</p>
             <a href="../vitrine/site-vitrine.html" class="btn">Découvrir</a>
         </div>
         <div class="site-choice" id="site-boutique">
+            <div class="icon-container">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
             <h2>Site Boutique</h2>
-            <p>Créez votre boutique en ligne avec des fonctionnalités avancées.</p>
+            <p>Lancez votre e-commerce avec une boutique en ligne performante. Bénéficiez de fonctionnalités avancées pour une expérience d'achat optimale.</p>
             <a href="../boutique/site-boutique.html" class="btn">Découvrir</a>
         </div>
     </main>
 
-    <script src="script.js"></script>
+    <section id="about" class="about-section">
+        <h2>À propos de IJDev</h2>
+        <p>IJDev est votre partenaire de confiance pour la création de sites web sur mesure. Nous combinons expertise technique et créativité pour donner vie à vos projets en ligne.</p>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contactez-nous</h2>
+            <div class="contact-content">
+                <div class="contact-cta">
+                    <p>Vous avez des questions ou vous souhaitez discuter de votre projet ?</p>
+                    <a href="/Acceuil/index.html#contact" class="btn btn-primary">Nous contacter</a>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 IJDev. Tous droits réservés.</p>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const siteChoices = document.querySelectorAll('.site-choice');
+            
+            siteChoices.forEach(choice => {
+                choice.addEventListener('mouseenter', () => {
+                    choice.style.transform = 'scale(1.05)';
+                });
+                
+                choice.addEventListener('mouseleave', () => {
+                    choice.style.transform = 'scale(1)';
+                });
+            });
+
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Merci pour votre message ! Nous vous contacterons bientôt.');
+                contactForm.reset();
+            });
+        });
+    </script>
 </body>
 </html>

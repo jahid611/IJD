@@ -3,179 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IJDev Web - Création de Site Web</title>
+    <title>IJDev Web - Création de Site Web Professionnel</title>
+    <meta name="description" content="IJDev Web offre des services de création de sites web professionnels, responsives et sur mesure pour booster votre présence en ligne.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset CSS */
+        :root {
+            --primary-color: #ff4d4d;
+            --secondary-color: #f2f2f2;
+            --background-color: #1a1a1a;
+            --text-color: #bfbfbf;
+            --card-background: #262626;
+            --transition-speed: 0.3s;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Variables CSS */
-        :root {
-    --primary-color: #ff4d4d;
-    --secondary-color: #f2f2f2;
-    --background-color: #1a1a1a;
-    --text-color: #bfbfbf;
-    --card-background: #262626;
-}
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
-/* Styles généraux */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    line-height: 1.6;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+        header {
+            background-color: var(--card-background);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background-color var(--transition-speed);
+        }
 
-/* Header */
-header {
-    background-color: var(--card-background);
-    padding: 20px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+        header.scrolled {
+            background-color: rgba(38, 38, 38, 0.9);
+        }
 
-nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-}
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+        }
 
-nav ul li {
-    margin: 0 15px;
-}
+        nav ul li {
+            margin: 0 15px;
+        }
 
-nav ul li a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
+        nav ul li a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color var(--transition-speed);
+        }
 
-nav ul li a:hover {
-    color: var(--primary-color);
-}
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
 
-/* Hero section avec l'image d'arrière-plan */
-.hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/Nos-Services/creation-site/crtsiteweb.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--secondary-color);
-}
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/Nos-Services/creation-site/crtsiteweb.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--secondary-color);
+            padding-top: 80px;
+        }
 
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
 
-.hero p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto;
-}
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
 
-/* Services section */
-.services {
-    padding: 60px 0;
-}
+        .services, .process {
+            padding: 80px 0;
+        }
 
-.services h2 {
-    text-align: center;
-    color: var(--secondary-color);
-    margin-bottom: 40px;
-}
+        .section-title {
+            text-align: center;
+            color: var(--secondary-color);
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
 
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
 
-.service-card {
-    background-color: var(--card-background);
-    border-radius: 8px;
-    padding: 30px;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
+        .service-card {
+            background-color: var(--card-background);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+            opacity: 0;
+            transform: translateY(20px);
+        }
 
-.service-card:hover {
-    transform: translateY(-10px);
-}
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
 
-.service-card i {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
+        .service-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
 
-.service-card h3 {
-    color: var(--secondary-color);
-    margin-bottom: 15px;
-}
+        .service-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
 
-/* Process section */
-.process {
-    background-color: var(--card-background);
-    padding: 60px 0;
-}
+        .process {
+            background-color: var(--card-background);
+        }
 
-.process h2 {
-    text-align: center;
-    color: var(--secondary-color);
-    margin-bottom: 40px;
-}
+        .process-steps {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
 
-.process-steps {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.step {
-    text-align: center;
-    max-width: 200px;
-}
+        .step {
+            text-align: center;
+            max-width: 200px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity var(--transition-speed), transform var(--transition-speed);
+        }
 
         .step-number {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-    font-weight: bold;
-}
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
 
-        /* Footer */
         footer {
-    background-color: var(--card-background);
-    color: var(--secondary-color);
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 60px;
-}
+            background-color: var(--card-background);
+            color: var(--secondary-color);
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <header>
+    <header id="header">
         <nav>
             <ul>
                 <li><a href="/Acceuil/index.html#services">Accueil</a></li>
@@ -196,7 +228,7 @@ nav ul li a:hover {
 
         <section id="services" class="services">
             <div class="container">
-                <h2>Nos Services de Création Web</h2>
+                <h2 class="section-title">Nos Services de Création Web</h2>
                 <div class="service-grid">
                     <div class="service-card">
                         <i class="fas fa-laptop-code"></i>
@@ -224,7 +256,7 @@ nav ul li a:hover {
 
         <section id="process" class="process">
             <div class="container">
-                <h2>Notre Processus de Création</h2>
+                <h2 class="section-title">Notre Processus de Création</h2>
                 <div class="process-steps">
                     <div class="step">
                         <div class="step-number">1</div>
@@ -257,11 +289,20 @@ nav ul li a:hover {
         </div>
     </footer>
 
-    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     <script>
-        // Animation des cartes de service au défilement
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animate elements on scroll
         function isElementInViewport(el) {
-            var rect = el.getBoundingClientRect();
+            const rect = el.getBoundingClientRect();
             return (
                 rect.top >= 0 &&
                 rect.left >= 0 &&
@@ -270,38 +311,36 @@ nav ul li a:hover {
             );
         }
 
-        function animateServiceCards() {
-            var cards = document.querySelectorAll('.service-card');
-            cards.forEach(function(card) {
-                if (isElementInViewport(card)) {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
+        function animateElements() {
+            const elements = document.querySelectorAll('.service-card, .step');
+            elements.forEach(el => {
+                if (isElementInViewport(el)) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
                 }
             });
         }
 
-        // Initialiser les cartes avec une opacité de 0 et une translation vers le bas
-        document.addEventListener('DOMContentLoaded', function() {
-            var cards = document.querySelectorAll('.service-card');
-            cards.forEach(function(card) {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            });
-            animateServiceCards();
+        // Header scroll effect
+        function handleHeaderScroll() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', () => {
+            animateElements();
+            handleHeaderScroll();
         });
 
-        // Animer les cartes au défilement
-        window.addEventListener('scroll', animateServiceCards);
-
-        // Navigation fluide
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+        // Animate on scroll
+        window.addEventListener('scroll', () => {
+            animateElements();
+            handleHeaderScroll();
         });
     </script>
 </body>

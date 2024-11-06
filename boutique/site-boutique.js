@@ -76,10 +76,10 @@ document.addEventListener('DOMContentLoaded', function () {
             selectedPlan = button.getAttribute('data-plan');
             switch (selectedPlan) {
                 case 'starter':
-                    basePrice = 2999;
+                    basePrice = 1700;
                     break;
                 case 'business':
-                    basePrice = 4999;
+                    basePrice = 2600;
                     break;
                 case 'enterprise':
                     window.location.href = '/Acceuil/index.html#contact'; // Rediriger vers la page d'accueil
